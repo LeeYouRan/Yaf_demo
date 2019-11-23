@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Response_Abstract::getBody</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+  <link rel="up" href="yaf.class.response.html" title="11.13. The Yaf_Response_Abstract class">
+  <link rel="prev" href="yaf.class.response.prependBody.html" title="Yaf_Response_Abstract::prependBody">
+  <link rel="next" href="yaf.class.response.clearBody.html" title="Yaf_Response_Abstract::clearBody">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Response_Abstract::getBody</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.response.prependBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.prependBody.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.13. The Yaf_Response_Abstract class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.response.clearBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.clearBody.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Response_Abstract::getBody">
+    <a name="yaf.class.response.getBody" id="yaf.class.response.getBody"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>åç§°</h2>
+
+      <p>Yaf_Response_Abstract::getBody</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.0)</p><a name="N24A20" class="indexterm" id="N24A20"></a>
+
+    <div class="refsect1">
+      <a name="N24A29" id="N24A29"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">string&nbsp;</span><span class=
+      "methodname">Yaf_Response_Abstract::getBody</span>( <span class="methodparam"><span class=
+      "type">void&nbsp;</span></span> );</code>
+
+      <p>è·å–å·²ç»è®¾ç½®çš„å“åº”body</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24A42" id="N24A42"></a> å‚æ•°
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><span class="type">void</span></span></dt>
+
+          <dd>
+            <p>æœ¬æ–¹æ³•ä¸éœ€è¦å‚æ•°(èµ·ç æš‚æ—¶ä¸éœ€è¦)</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24A5B" id="N24A5B"></a> è¿”å›å€¼
+
+      <p>æˆåŠŸè¿”å›å·²è®¾ç½®çš„bodyå€¼, å¤±è´¥è¿”å›NULL</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24A62" id="N24A62"></a> ä¾‹å­
+
+      <div class="example">
+        <a name="N24A67" id="N24A67"></a>
+
+        <p class="title"><b>ä¾‹ 11.78. <code class="function">Yaf_Response_Abstract::getBody</code> çš„ä¾‹å­</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public funciton init() {
+            echo $this-&gt;getResponse()-&gt;getBody();
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.response.prependBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.prependBody.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.response.html" tppabs="http://www.laruence.com/manual/yaf.class.response.html">ä¸Šä¸€çº§</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.response.clearBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.clearBody.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Response_Abstract::prependBody&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">èµ·å§‹é¡µ</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Response_Abstract::clearBody</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>11.12. The Yaf_Request_Abstract class</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.classes.html" title="第 11 章 内建的类">
+  <link rel="prev" href="yaf.class.view.simple.get.html" title="Yaf_View_Simple::get">
+  <link rel="next" href="yaf.class.request.getException.html" title="Yaf_Request_Abstract::getException">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">11.12. The Yaf_Request_Abstract class</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.view.simple.get.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.get.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">第 11 章 内建的类</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.request.getException.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getException.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="section" title="11.12. The Yaf_Request_Abstract class">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both"><a name="yaf.class.request" id="yaf.class.request"></a>11.12. The
+          Yaf_Request_Abstract class</h2>
+        </div>
+      </div>
+    </div><a name="N23935" class="indexterm" id="N23935"></a>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>简介
+
+      <p>代表了一个实际请求, 一般的不用自己实例化它, Yaf_Application在run以后会自动根据当前请求实例它</p>
+
+      <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下, 也可以使用
+      Yaf\Request_Abstract</p>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>
+      <pre class="classsynopsis">
+ <span class="ooclass">
+                                <span class="modifier">abstract </span>
+                                <span class="classname">Yaf_Request_Abstract</span>
+                        </span> {<br><code class="fieldsynopsis">  
+                                <span class="modifier">protected </span>
+                                <span class="type">string </span>
+                                <a class="link" href="yaf.class.request.html#yaf.class.request.props._method" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.props._method">
+                                        <code class="varname">_method</code>
+                                </a>
+                        ;</code><br><code class="fieldsynopsis">  
+                                <span class="modifier">protected </span>
+                                <span class="type">string </span>
+                                <a class="link" href="yaf.class.request.html#yaf.class.request.props._module" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.props._module">
+                                        <code class="varname">_module</code>
+                                </a>
+                        ;</code><br><code class="fieldsynopsis">  
+                                <span class="modifier">protected </span>
+                                        <span class="type">string </span>
+                                <a class="link" href="yaf.class.request.html#yaf.class.request.props._controller" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.props._controller">
+                                        <code class="varname">_controller</code>
+                                </a>
+                        ;</code><br><code class="fieldsynopsis">  
+                                <span class="modifier">protected </span>
+                                <span class="type">string </span>
+                                <a class="link" href="yaf.class.request.html#yaf.class.request.props._action" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.props._action">
+                                        <code class="varname">_action</code>
+                                </a>
+                        ;</code><br><code class="fieldsynopsis">  
+                                <span class="modifier">protected </span>
+                                <span class="type">array </span>
+                                <a class="link" href="yaf.class.request.html#yaf.class.request.props._params" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.props._params">
+                                        <code class="varname">_params</code>
+                                </a>
+                        ;</code><br><code class="fieldsynopsis">  
+                                <span class="modifier">protected </span>
+                                <span class="type">string </span>
+                                <a class="link" href="yaf.class.request.html#yaf.class.request.props._language" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.props._language">
+                                        <code class="varname">_language</code>
+                                </a>
+   ;</code><br><code class="fieldsynopsis">  
+                                <span class="modifier">protected </span>
+                                <span class="type">string </span>
+                                <a class="link" href="yaf.class.request.html#yaf.class.request.props._base_uri" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.props._base_uri">
+                                        <code class="varname">_base_uri</code>
+                                </a>
+   ;</code><br><code class="fieldsynopsis">  
+                                <span class="modifier">protected </span>
+                                <span class="type">string </span>
+                                <a class="link" href="yaf.class.request.html#yaf.class.request.props._request_uri" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.props._request_uri">
+                                        <code class="varname">_request_uri</code>
+                                </a>
+   ;</code><br><code class="fieldsynopsis">  
+                                <span class="modifier">protected </span>
+                                <span class="type">boolean </span>
+                                <a class="link" href="yaf.class.request.html#yaf.class.request.props._dispatched" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.props._dispatched">
+                                        <code class="varname">_dispatched</code>
+                                </a>
+   ;</code><br><code class="fieldsynopsis">  
+                                <span class="modifier">protected </span>
+                                <span class="type">boolean </span>
+                                <a class="link" href="yaf.class.request.html#yaf.class.request.props._routed" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.props._routed">
+                                        <code class="varname">_routed</code>
+                                </a>
+   ;</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">string </span><span class="methodname">
+     <a class="link" href="yaf.class.request.getModuleName.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getModuleName.html" title="Yaf_Request_Abstract::getModuleName">
+     getModuleName
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">string </span><span class="methodname">
+     <a class="link" href="yaf.class.request.getControllerName.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getControllerName.html" title="Yaf_Request_Abstract::getControllerName">
+     getControllerName
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">string </span><span class="methodname">
+     <a class="link" href="yaf.class.request.getActionName.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getActionName.html" title="Yaf_Request_Abstract::getActionName">
+     getActionName
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">boolean </span><span class="methodname">
+     <a class="link" href="">
+     setModuleName
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">boolean </span><span class="methodname">
+     <a class="link" href="">
+     setControllerName
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">boolean </span><span class="methodname">
+     <a class="link" href="">
+     setActionName
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">Exception </span><span class="methodname">
+     <a class="link" href="yaf.class.request.getException.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getException.html" title="Yaf_Request_Abstract::getException">
+     getException
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="yaf.class.request.getParams.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getParams.html" title="Yaf_Request_Abstract::getParams">
+     getParams
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">void </span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="yaf.class.request.getParam.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getParam.html" title="Yaf_Request_Abstract::getParam">
+     getParam
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+                                </span>,<br>                                              <span class="methodparam">
+                                        <span class="type">mixed </span>
+                                        <span class="parameter">$dafault</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="yaf.class.request.setParam.html" tppabs="http://www.laruence.com/manual/yaf.class.request.setParam.html" title="Yaf_Request_Abstract::setParam">
+     setParam
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+                                </span>,<br>                                              <span class="methodparam">
+                                        <span class="type">mixed </span>
+     <span class="parameter">$value</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="yaf.class.request.getMethod.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getMethod.html" title="Yaf_Request_Abstract::getMethod">
+     getMethod
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">void </span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">abstract </span><span class="modifier">public </span><span class="type">mixed </span><span class=
+"methodname">
+     <a class="link" href="">
+     getLanguage
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">void </span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">abstract </span><span class="modifier">public </span><span class="type">mixed </span><span class=
+"methodname">
+     getQuery
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">abstract </span><span class="modifier">public </span><span class="type">mixed </span><span class=
+"methodname">
+     getPost
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">abstract </span><span class="modifier">public </span><span class="type">mixed </span><span class=
+"methodname">
+     getEnv
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">abstract </span><span class="modifier">public </span><span class="type">mixed </span><span class=
+"methodname">
+     getServer
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">abstract </span><span class="modifier">public </span><span class="type">mixed </span><span class=
+"methodname">
+     getCookie
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">abstract </span><span class="modifier">public </span><span class="type">mixed </span><span class=
+"methodname">
+     getFiles
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">abstract </span><span class=
+"modifier">public </span><span class="type">bool </span><span class="methodname">
+      isGet
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">abstract </span><span class=
+"modifier">public </span><span class="type">bool </span><span class="methodname">
+      isPost
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">abstract </span><span class=
+"modifier">public </span><span class="type">bool </span><span class="methodname">
+      isHead
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">abstract </span><span class=
+"modifier">public </span><span class="type">bool </span><span class="methodname">
+      isXmlHttpRequest
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">abstract </span><span class=
+"modifier">public </span><span class="type">bool </span><span class="methodname">
+      isPut
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">abstract </span><span class=
+"modifier">public </span><span class="type">bool </span><span class="methodname">
+      isDelete
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">abstract </span><span class=
+"modifier">public </span><span class="type">bool </span><span class="methodname">
+      isOption
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">abstract </span><span class=
+"modifier">public </span><span class="type">bool </span><span class="methodname">
+      isCli
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+      isDispatched
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+      setDispatched
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+      isRouted
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+      setRouted
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br>}
+</pre>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>属性说明
+
+      <div class="variablelist">
+        <dl>
+          <dt><a name="yaf.class.request.props._method" id="yaf.class.request.props._method"></a> <span class=
+          "term"><code class="varname">_method</code></span></dt>
+
+          <dd>
+            <p>当前请求的Method, 对于命令行来说, Method为"CLI"</p>
+          </dd>
+
+          <dt><a name="yaf.class.request.props._language" id="yaf.class.request.props._language"></a> <span class=
+          "term"><code class="varname">_language</code></span></dt>
+
+          <dd>
+            <p>当前请求的希望接受的语言, 对于Http请求来说, 这个值来自分析请求头Accept-Language. 对于不能鉴别的情况, 这个值为NULL.</p>
+          </dd>
+
+          <dt><a name="yaf.class.request.props._module" id="yaf.class.request.props._module"></a> <span class=
+          "term"><code class="varname">_module</code></span></dt>
+
+          <dd>
+            <p>在路由完成后, 请求被分配到的模块名</p>
+          </dd>
+
+          <dt><a name="yaf.class.request.props._controller" id="yaf.class.request.props._controller"></a> <span class=
+          "term"><code class="varname">_controller</code></span></dt>
+
+          <dd>
+            <p>在路由完成后, 请求被分配到的控制器名</p>
+          </dd>
+
+          <dt><a name="yaf.class.request.props._action" id="yaf.class.request.props._action"></a> <span class=
+          "term"><code class="varname">_action</code></span></dt>
+
+          <dd>
+            <p>在路由完成后, 请求被分配到的动作名</p>
+          </dd>
+
+          <dt><a name="yaf.class.request.props._params" id="yaf.class.request.props._params"></a> <span class=
+          "term"><code class="varname">_params</code></span></dt>
+
+          <dd>
+            <p>当前请求的附加参数</p>
+          </dd>
+
+          <dt><a name="yaf.class.request.props._routed" id="yaf.class.request.props._routed"></a> <span class=
+          "term"><code class="varname">_routed</code></span></dt>
+
+          <dd>
+            <p>表示当前请求是否已经完成路由</p>
+          </dd>
+
+          <dt><a name="yaf.class.request.props._dispatched" id="yaf.class.request.props._dispatched"></a> <span class=
+          "term"><code class="varname">_dispatched</code></span></dt>
+
+          <dd>
+            <p>表示当前请求是否已经完成分发</p>
+          </dd>
+
+          <dt><a name="yaf.class.request.props._request_uri" id="yaf.class.request.props._request_uri"></a>
+          <span class="term"><code class="varname">_request_uri</code></span></dt>
+
+          <dd>
+            <p>当前请求的Request URI</p>
+          </dd>
+
+          <dt><a name="yaf.class.request.props._base_uri" id="yaf.class.request.props._base_uri"></a> <span class=
+          "term"><code class="varname">_base_uri</code></span></dt>
+
+          <dd>
+            <p>当前请求Request URI要忽略的前缀, 一般不需要手工设置, Yaf会自己分析. 只是当Yaf分析出错的时候, 可以通过<a class="link" href=
+            "yaf.config.optional.html" tppabs="http://www.laruence.com/manual/yaf.config.optional.html" title="4.2. 可选的配置项">application.baseUri</a>来手工设置.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="The Yaf_Request_Http class">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.request.http" id="yaf.class.request.http"></a>The Yaf_Request_Http
+            class</h3>
+          </div>
+        </div>
+      </div><a name="N23D71" class="indexterm" id="N23D71"></a>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>简介
+
+        <p>代表了一个实际的Http请求, 一般的不用自己实例化它, Yaf_Application在run以后会自动根据当前请求实例它</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Request_Http</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+                                <span class="modifier">final </span>
+                                <span class="classname">Yaf_Request_Http</span>
+    extends
+    Yaf_Request_Abstract
+                        </span> {<br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">void </span><span class="methodname">
+     <a class="link" href="">
+      __construct
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$request_uri</span>
+     <span class="initializer">= NULL</span>
+                                </span>,<br>                                                 <span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$base_uri</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getLanguage
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">void </span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getQuery
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getPost
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getEnv
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getServer
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getCookie
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getFiles
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isGet
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isPost
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isHead
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isXmlHttpRequest
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isPut
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isDelete
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isOption
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isCli
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isDispatched
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      setDispatched
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isRouted
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      setRouted
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">string </span><span class="methodname">
+     <a class="link" href="">
+      getBaseUri
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="">
+      setBaseUri
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$base_uri</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">string </span><span class="methodname">
+     <a class="link" href="">
+      getRequestUri
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br>}
+</pre>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>属性说明
+
+        <div class="variablelist"></div>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="The Yaf_Request_Simple class">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.request.simple" id="yaf.class.request.simple"></a>The
+            Yaf_Request_Simple class</h3>
+          </div>
+        </div>
+      </div><a name="N23FDF" class="indexterm" id="N23FDF"></a>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>简介
+
+        <p>代表了一个实际的请求, 一般的不用自己实例化它, Yaf_Application在run以后会自动根据当前请求实例它</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Request_Simple</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+                                <span class="modifier">final </span>
+                                <span class="classname">Yaf_Request_Simple</span>
+    extends
+    Yaf_Request_Abstract
+                        </span> {<br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">void </span><span class="methodname">
+     <a class="link" href="">
+      __construct
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$module</span>
+                                </span>,<br>                                                 <span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$controller</span>
+                                </span>,<br>                                                 <span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$action</span>
+                                </span>,<br>                                                 <span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$method</span>
+                                </span>,<br>                                                 <span class="methodparam">
+     <span class="type">array </span>
+     <span class="parameter">$params</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getLanguage
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">void </span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getQuery
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getPost
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getEnv
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getServer
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getCookie
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+                                </span>);</code><br><code class="methodsynopsis">  <span class=
+"modifier">public </span><span class="type">mixed </span><span class="methodname">
+     <a class="link" href="">
+     getFiles
+    </a>
+    </span>(<span class="methodparam">
+                                        <span class="type">string </span>
+                                        <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isGet
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isPost
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isHead
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isXmlHttpRequest
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isPut
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isDelete
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isOption
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isSimple
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isDispatched
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      setDispatched
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      isRouted
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">bool </span><span class="methodname">
+     <a class="link" href="">
+      setRouted
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br>}
+</pre>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>属性说明
+
+        <div class="variablelist"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.view.simple.get.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.get.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.classes.html" tppabs="http://www.laruence.com/manual/yaf.classes.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.request.getException.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getException.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_View_Simple::get&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Request_Abstract::getException</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

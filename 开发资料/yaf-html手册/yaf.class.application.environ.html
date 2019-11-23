@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Application::environ</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+  <link rel="up" href="yaf.classes.html#yaf.class.application" title="11.1. The Yaf_Application class">
+  <link rel="prev" href="yaf.class.application.app.html" title="Yaf_Application::app">
+  <link rel="next" href="yaf.class.application.run.html" title="Yaf_Application::run">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Application::environ</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.application.app.html" tppabs="http://www.laruence.com/manual/yaf.class.application.app.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.1. The Yaf_Application class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.application.run.html" tppabs="http://www.laruence.com/manual/yaf.class.application.run.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Application::environ">
+    <a name="yaf.class.application.environ" id="yaf.class.application.environ"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>åç§°</h2>
+
+      <p>Yaf_Application::environ</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N20D43" class="indexterm" id="N20D43"></a>
+
+    <div class="refsect1">
+      <a name="N20D4C" id="N20D4C"></a> <code class="methodsynopsis"><span class="type">string&nbsp;</span><span class=
+      "methodname">Yaf_Application::environ</span>(<span class="methodparam"><span class=
+      "parameter">void</span></span>);</code>
+
+      <p>è·å–å½“å‰Yaf_Applicationçš„ç¯å¢ƒå</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N20D60" id="N20D60"></a> å‚æ•°
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><span class="type">void</span></span></dt>
+
+          <dd>
+            <p>æœ¬æ–¹æ³•ä¸éœ€è¦å‚æ•°</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N20D79" id="N20D79"></a> è¿”å›å€¼
+
+      <p>å½“å‰çš„ç¯å¢ƒå, ä¹Ÿå°±æ˜¯ini_get("yaf.environ")</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N20D80" id="N20D80"></a> ä¾‹å­
+
+      <div class="example">
+        <a name="N20D85" id="N20D85"></a>
+
+        <p class="title"><b>ä¾‹ 11.4. <code class="function">Yaf_Application::environ</code> çš„ä¾‹å­</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+&lt;?php
+$config = array(
+        "application" =&gt; array(
+                "directory" =&gt; "/usr/local/www/yaf",
+        ),
+);
+$app = new Yaf_Application($config);
+print($app-&gt;environ());
+?&gt;
+
+    
+</pre>
+          <pre class="screen">
+     
+     product
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.application.app.html" tppabs="http://www.laruence.com/manual/yaf.class.application.app.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.classes.html#yaf.class.application" tppabs="http://www.laruence.com/manual/yaf.classes.html#yaf.class.application">ä¸Šä¸€çº§</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.application.run.html" tppabs="http://www.laruence.com/manual/yaf.class.application.run.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Application::app&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">èµ·å§‹é¡µ</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Application::run</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

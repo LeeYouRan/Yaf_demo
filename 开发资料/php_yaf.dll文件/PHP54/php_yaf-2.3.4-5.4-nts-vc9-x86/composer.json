@@ -1,0 +1,15 @@
+{
+    "name": "yaf",
+    "version": "2.3.4",
+    "type": "extension",
+    "license": [
+        "PHP"
+    ],
+    "authors": [
+        {
+            "name": "Xinchen Hui",
+            "email": "laruence@php.net"
+        }
+    ],
+    "description": "PHP Framework in PHP extension"
+}

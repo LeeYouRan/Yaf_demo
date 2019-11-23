@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Controller_Abstract::forward</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.controller.html" title="11.9. The Yaf_Controller_Abstract class">
+  <link rel="prev" href="yaf.class.controller.display.html" title="Yaf_Controller_Abstract::display">
+  <link rel="next" href="yaf.class.controller.redirect.html" title="Yaf_Controller_Abstract::redirect">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Controller_Abstract::forward</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.controller.display.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.display.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.9. The Yaf_Controller_Abstract class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.controller.redirect.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.redirect.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Controller_Abstract::forward">
+    <a name="yaf.class.controller.forward" id="yaf.class.controller.forward"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Controller_Abstract::forward</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N23150" class="indexterm" id="N23150"></a>
+
+    <div class="refsect1">
+      <a name="N23159" id="N23159"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">boolean&nbsp;</span><span class=
+      "methodname">Yaf_Controller_Abstract::forward</span>( <span class="methodparam"><span class=
+      "type">string&nbsp;</span> <span class="parameter">$action</span></span> ,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="methodparam"><span class="type">array&nbsp;</span> <span class="parameter">$params</span>
+      <span class="initializer">=&nbsp;NULL</span></span> );</code><br>
+      <code class="methodsynopsis"><span class="modifier">public&nbsp;</span><span class=
+      "type">boolean&nbsp;</span><span class="methodname">Yaf_Controller_Abstract::forward</span>( <span class=
+      "methodparam"><span class="type">string&nbsp;</span> <span class="parameter">$controller</span></span> ,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="methodparam"><span class="type">string&nbsp;</span> <span class="parameter">$action</span></span>
+      ,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="methodparam"><span class="type">array&nbsp;</span> <span class="parameter">$params</span>
+      <span class="initializer">=&nbsp;NULL</span></span> );</code><br>
+      <code class="methodsynopsis"><span class="modifier">public&nbsp;</span><span class=
+      "type">boolean&nbsp;</span><span class="methodname">Yaf_Controller_Abstract::forward</span>( <span class=
+      "methodparam"><span class="type">string&nbsp;</span> <span class="parameter">$module</span></span> ,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="methodparam"><span class="type">string&nbsp;</span> <span class=
+      "parameter">$controller</span></span> ,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="methodparam"><span class="type">string&nbsp;</span> <span class="parameter">$action</span></span>
+      ,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="methodparam"><span class="type">array&nbsp;</span> <span class="parameter">$params</span>
+      <span class="initializer">=&nbsp;NULL</span></span> );</code>
+
+      <p>将当前请求转给另外一个动作处理</p>
+
+      <div class="note" title="注意" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td valign="top" align="center" rowspan="2" width="25"><img alt="[注意]" src="note.gif" tppabs="http://www.laruence.com/manual/images/note.gif"></td>
+
+            <th align="left">注意</th>
+          </tr>
+
+          <tr>
+            <td valign="top" align="left">Yaf_Controller_Abstract::forward只是登记下要forward的目的地, 并不会立即跳转.
+            而是会等到当前的Action执行完成以后, 才会进行新的一轮dispatch.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N231E1" id="N231E1"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$module</code></em></span></dt>
+
+          <dd>
+            <p>要转给动作的模块, 注意要首字母大写, 如果为空, 则转给当前模块</p>
+          </dd>
+
+          <dt><span class="term"><em class="parameter"><code>$controller</code></em></span></dt>
+
+          <dd>
+            <p>要转给动作的控制器, 注意要首字母大写, 如果为空, 则转给当前控制器</p>
+          </dd>
+
+          <dt><span class="term"><em class="parameter"><code>$action</code></em></span></dt>
+
+          <dd>
+            <p>要转给的动作, 注意要全部小写</p>
+          </dd>
+
+          <dt><span class="term"><em class="parameter"><code>$params</code></em></span></dt>
+
+          <dd>
+            <p>关联数组, 附加的参数, <a class="link" href="yaf.class.request.getParam.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getParam.html" title=
+            "Yaf_Request_Abstract::getParam"><code class=
+            "methodname">可通过Yaf_Request_Abstract::getParam</code></a>获取</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2322D" id="N2322D"></a> 返回值
+
+      <p>成功返回Yaf_Controller_Abstract, 失败返回FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N23234" id="N23234"></a> 例子
+
+      <div class="example">
+        <a name="N23239" id="N23239"></a>
+
+        <p class="title"><b>例 11.55. <code class="function">Yaf_Controller_Abstract::forward</code> 的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public funciton init() {
+           /**
+            * 如果用户没登陆, 则转给登陆动作
+            */
+           if($user_not_login) {
+              $this-&gt;forward("login");
+           }
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.controller.display.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.display.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.controller.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.controller.redirect.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.redirect.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Controller_Abstract::display&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Controller_Abstract::redirect</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

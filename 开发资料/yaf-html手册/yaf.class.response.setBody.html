@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Response_Abstract::setBody</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.response.html" title="11.13. The Yaf_Response_Abstract class">
+  <link rel="prev" href="yaf.class.response.html" title="11.13. The Yaf_Response_Abstract class">
+  <link rel="next" href="yaf.class.response.appendBody.html" title="Yaf_Response_Abstract::appendBody">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Response_Abstract::setBody</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.response.html" tppabs="http://www.laruence.com/manual/yaf.class.response.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.13. The Yaf_Response_Abstract class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.response.appendBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.appendBody.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Response_Abstract::setBody">
+    <a name="yaf.class.response.setBody" id="yaf.class.response.setBody"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Response_Abstract::setBody</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.0)</p><a name="N24846" class="indexterm" id="N24846"></a>
+
+    <div class="refsect1">
+      <a name="N2484F" id="N2484F"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">boolean&nbsp;</span><span class=
+      "methodname">Yaf_Response_Abstract::setBody</span>( <span class="methodparam"><span class=
+      "type">string&nbsp;</span> <span class="parameter">$body</span></span> ,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="methodparam"><span class="type">string&nbsp;</span> <span class="parameter">$name</span>
+      <span class="initializer">=&nbsp;NULL</span></span> );</code>
+
+      <p>设置响应的Body, $name参数是保留参数, 目前没有特殊效果, 留空即可</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24877" id="N24877"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$body</code></em></span></dt>
+
+          <dd>
+            <p>要响应的字符串, 一般是一段HTML, 或者是一段JSON(返回给Ajax请求)</p>
+          </dd>
+
+          <dt><span class="term"><em class="parameter"><code>$name</code></em></span></dt>
+
+          <dd>
+            <p>要响应的字符串的key, 一般的你可以通过指定不同的key, 给一个response对象设置很多响应字符串, 可以在所有的请求结束后做layout, 如果你不做特殊处理, 交给Yaf去发送响应的话, 所有你设置的响应字符串, 按照被设置的先后顺序被输出给客户端.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2489F" id="N2489F"></a> 返回值
+
+      <p>成功返回Yaf_Response_Abstract, 失败返回FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N248A6" id="N248A6"></a> 例子
+
+      <div class="example">
+        <a name="N248AB" id="N248AB"></a>
+
+        <p class="title"><b>例 11.75. <code class="function">Yaf_Response_Abstract::setBody</code> 的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public funciton init() {
+            $this-&gt;getResponse()-&gt;setBody("Hello World");
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N248B9" id="N248B9"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.response.appendBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.appendBody.html" title=
+          "Yaf_Response_Abstract::appendBody"><code class=
+          "methodname">Yaf_Response_Abstract::appendBody</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.class.response.prependBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.prependBody.html" title=
+          "Yaf_Response_Abstract::prependBody"><code class=
+          "methodname">Yaf_Response_Abstract::prependBody</code></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.response.html" tppabs="http://www.laruence.com/manual/yaf.class.response.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.response.html" tppabs="http://www.laruence.com/manual/yaf.class.response.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.response.appendBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.appendBody.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">11.13. The Yaf_Response_Abstract class&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Response_Abstract::appendBody</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

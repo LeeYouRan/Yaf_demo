@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Controller_Abstract::setViewPath</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+  <link rel="up" href="yaf.class.controller.html" title="11.9. The Yaf_Controller_Abstract class">
+  <link rel="prev" href="yaf.class.controller.initView.html" title="Yaf_Controller_Abstract::initView">
+  <link rel="next" href="yaf.class.controller.getViewPath.html" title="Yaf_Controller_Abstract::getViewPath">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Controller_Abstract::setViewPath</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.controller.initView.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.initView.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.9. The Yaf_Controller_Abstract class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.controller.getViewPath.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getViewPath.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Controller_Abstract::setViewPath">
+    <a name="yaf.class.controller.setViewPath" id="yaf.class.controller.setViewPath"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>åç§°</h2>
+
+      <p>Yaf_Controller_Abstract::setViewPath</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N22F47" class="indexterm" id="N22F47"></a>
+
+    <div class="refsect1">
+      <a name="N22F50" id="N22F50"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">boolean&nbsp;</span><span class=
+      "methodname">Yaf_Controller_Abstract::setViewPath</span>( <span class="methodparam"><span class=
+      "type">string&nbsp;</span> <span class="parameter">$view_directory</span></span> );</code>
+
+      <p>æ›´æ”¹è§†å›¾æ¨¡æ¿ç›®å½•, ä¹‹åYaf_Controller_Abstract::renderå°±ä¼šåœ¨æ•´ä¸ªç›®å½•ä¸‹å¯»æ‰¾æ¨¡æ¿æ–‡ä»¶</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N22F6C" id="N22F6C"></a> å‚æ•°
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$view_directory</code></em></span></dt>
+
+          <dd>
+            <p>è§†å›¾æ¨¡æ¿ç›®å½•, ç»å¯¹ç›®å½•.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N22F85" id="N22F85"></a> è¿”å›å€¼
+
+      <p>æˆåŠŸè¿”å›Yaf_Controller_Abstract, å¤±è´¥è¿”å›FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N22F8C" id="N22F8C"></a> ä¾‹å­
+
+      <div class="example">
+        <a name="N22F91" id="N22F91"></a>
+
+        <p class="title"><b>ä¾‹ 11.51. <code class="function">Yaf_Controller_Abstract::setViewPath</code> çš„ä¾‹å­</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public funciton init() {
+           $this-&gt;setViewPath("/usr/local/www/tpl/");
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N22F9F" id="N22F9F"></a> å‚è§
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.controller.render.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.render.html" title=
+          "Yaf_Controller_Abstract::render"><code class="methodname">Yaf_Controller_Abstract::render</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.class.controller.getViewPath.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getViewPath.html" title=
+          "Yaf_Controller_Abstract::getViewPath"><code class=
+          "methodname">Yaf_Controller_Abstract::getViewPath</code></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.controller.initView.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.initView.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.controller.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.html">ä¸Šä¸€çº§</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.controller.getViewPath.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getViewPath.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Controller_Abstract::initView&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">èµ·å§‹é¡µ</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Controller_Abstract::getViewPath</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

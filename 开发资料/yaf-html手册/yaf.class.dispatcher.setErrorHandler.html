@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Dispatcher::setErrorHandler</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.dispatcher.html" title="11.4. The Yaf_Dispatcher class">
+  <link rel="prev" href="yaf.class.dispatcher.flushInstantly.html" title="Yaf_Dispatcher::flushInstantly">
+  <link rel="next" href="yaf.class.dispatcher.getApplication.html" title="Yaf_Dispatcher::getApplication">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Dispatcher::setErrorHandler</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href=
+        "yaf.class.dispatcher.flushInstantly.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.flushInstantly.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.4. The Yaf_Dispatcher class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.getApplication.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.getApplication.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Dispatcher::setErrorHandler">
+    <a name="yaf.class.dispatcher.setErrorHandler" id="yaf.class.dispatcher.setErrorHandler"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Dispatcher::setErrorHandler</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N21C15" class="indexterm" id="N21C15"></a>
+
+    <div class="refsect1">
+      <a name="N21C1E" id="N21C1E"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">boolean&nbsp;</span><span class=
+      "methodname">Yaf_Dispatcher::setErrorHandler</span>( <span class="methodparam"><span class=
+      "type">mixed&nbsp;</span> <span class="parameter">$callback</span></span> ,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="methodparam"><span class="type">int&nbsp;</span> <span class="parameter">$error_code</span>
+      <span class="initializer">=&nbsp;E_ALL | E_STRICT</span></span> );</code>
+
+      <p>设置错误处理函数, 一般在<a class="link" href="yaf.class.dispatcher.throwException.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.throwException.html" title=
+      "Yaf_Dispatcher::throwException">appcation.throwException</a>关闭的情况下, Yaf会在出错的时候触发错误, 这个时候, 如果设置了错误处理函数,
+      则会把控制交给错误处理函数处理.</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21C4A" id="N21C4A"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$callback</code></em></span></dt>
+
+          <dd>
+            <p>错误处理函数, 这个函数需要最少接受俩个参数: 错误代码($error_code)和错误信息($error_message), 可选的还可以接受三个参数: 错误文件($err_file),
+            错误行($err_line)和错误上下文($errcontext)</p>
+          </dd>
+
+          <dt><span class="term"><em class="parameter"><code>$error_code</code></em></span></dt>
+
+          <dd>
+            <p>要捕获的错误类型</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21C72" id="N21C72"></a> 返回值
+
+      <p>成功返回Yaf_Dispatcher, 失败返回FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21C79" id="N21C79"></a> 例子
+
+      <div class="example">
+        <a name="N21C7E" id="N21C7E"></a>
+
+        <p class="title"><b>例 11.24. <code class="function">Yaf_Dispatcher::setErrorHandler</code>的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+&lt;?php
+/** 
+ * 一般可放在Bootstrap中定义错误处理函数
+ */
+function myErrorHandler($errno, $errstr, $errfile, $errline)
+{
+    switch ($errno) {
+    case YAF_ERR_NOTFOUND_CONTROLLER:
+    case YAF_ERR_NOTFOUND_MODULE:
+    case YAF_ERR_NOTFOUND_ACTION:
+         header("Not Found");
+    break;
+
+    default:
+        echo "Unknown error type: [$errno] $errstr&lt;br /&gt;\n";
+        break;
+    }
+
+    return true;
+}
+
+Yaf_Dispatcher::getInstance()-&gt;setErrorHandler("myErrorHandler");
+?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21C8C" id="N21C8C"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.catcherror.html" tppabs="http://www.laruence.com/manual/yaf.catcherror.html" title="第 10 章 异常和错误">异常和错误</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href=
+        "yaf.class.dispatcher.flushInstantly.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.flushInstantly.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.dispatcher.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.getApplication.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.getApplication.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Dispatcher::flushInstantly&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Dispatcher::getApplication</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>11.7. Yaf_Session</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+  <link rel="up" href="yaf.classes.html" title="ç¬¬ 11 ç«  å†…å»ºçš„ç±»">
+  <link rel="prev" href="yaf.class.registry.del.html" title="Yaf_Registry::del">
+  <link rel="next" href="yaf.class.config.html" title="11.8. The Yaf_Config_Abstract class">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">11.7. Yaf_Session</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.registry.del.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.del.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <th align="center" width="60%">ç¬¬ 11 ç«  å†…å»ºçš„ç±»</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.config.html" tppabs="http://www.laruence.com/manual/yaf.class.config.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="section" title="11.7. Yaf_Session">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both"><a name="yaf.class.session" id="yaf.class.session"></a>11.7.
+          Yaf_Session</h2>
+        </div>
+      </div>
+    </div><a name="N226CE" class="indexterm" id="N226CE"></a>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>ç®€ä»‹
+
+      <p>Yaf_Sessionæ˜¯Yafå¯¹Sessionçš„åŒ…è£…, å®ç°äº†Iterator, ArrayAccess, Countableæ¥å£, æ–¹ä¾¿ä½¿ç”¨.</p>
+
+      <p>åœ¨PHP5.3ä¹‹å, æ‰“å¼€<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>çš„æƒ…å†µä¸‹, ä¹Ÿå¯ä»¥ä½¿ç”¨
+      Yaf\Session</p>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>
+      <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier">final </span>
+    <span class="classname">Yaf_Session</span>
+    implements
+    <span class="interfacename">Iterator</span>
+    , <span class="interfacename">ArrayAccess</span>
+    , <span class="interfacename">Countable</span>
+   </span> {<br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"modifier">static </span><span class="type">Yaf_Session </span><span class="methodname">
+     <a class="link" href="">
+      getInstance
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">Yaf_Session </span><span class="methodname">
+     <a class="link" href="">
+      start
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     <a class="link" href="">
+      get
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="">
+      set
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>,<br>                                             <span class="methodparam">
+     <span class="type">mixed </span>
+     <span class="parameter">$value</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     <a class="link" href="">
+      __get
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="">
+      __set
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>,<br>                                               <span class="methodparam">
+     <span class="type">mixed </span>
+     <span class="parameter">$value</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="">
+      has
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="">
+      del
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="">
+      __isset
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="">
+      __unset
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>);</code><br>}
+</pre>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.registry.del.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.del.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.classes.html" tppabs="http://www.laruence.com/manual/yaf.classes.html">ä¸Šä¸€çº§</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.config.html" tppabs="http://www.laruence.com/manual/yaf.class.config.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Registry::del&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">èµ·å§‹é¡µ</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;11.8. The Yaf_Config_Abstract class</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

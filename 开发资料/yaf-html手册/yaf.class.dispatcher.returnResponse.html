@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Dispatcher::returnResponse</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.dispatcher.html" title="11.4. The Yaf_Dispatcher class">
+  <link rel="prev" href="yaf.class.dispatcher.autoRender.html" title="Yaf_Dispatcher::autoRender">
+  <link rel="next" href="yaf.class.dispatcher.flushInstantly.html" title="Yaf_Dispatcher::flushInstantly">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Dispatcher::returnResponse</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.dispatcher.autoRender.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.autoRender.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.4. The Yaf_Dispatcher class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.flushInstantly.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.flushInstantly.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Dispatcher::returnResponse">
+    <a name="yaf.class.dispatcher.returnResponse" id="yaf.class.dispatcher.returnResponse"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Dispatcher::returnResponse</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N21B06" class="indexterm" id="N21B06"></a>
+
+    <div class="refsect1">
+      <a name="N21B0F" id="N21B0F"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">void&nbsp;</span><span class=
+      "methodname">Yaf_Dispatcher::returnResponse</span>( <span class="methodparam"><span class=
+      "type">boolean&nbsp;</span> <span class="parameter">$switch</span></span> );</code>
+
+      <p>是否返回Response对象, 如果启用, 则Response对象在分发完成以后不会自动输出给请求端, 而是交给程序员自己控制输出.</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21B29" id="N21B29"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$switch</code></em></span></dt>
+
+          <dd>
+            <p>开启状态</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21B42" id="N21B42"></a> 返回值
+
+      <p>成功返回Yaf_Dispatcher, 失败返回FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21B49" id="N21B49"></a> 例子
+
+      <div class="example">
+        <a name="N21B4E" id="N21B4E"></a>
+
+        <p class="title"><b>例 11.22. <code class="function">Yaf_Dispatcher::returnResponse</code>的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     $application = new Yaf_Application("config.ini"); 
+
+     /* 关闭自动响应, 交给rd自己输出*/
+     $response =
+     $application-&gt;getDispatcher()-&gt;returnResponse(TRUE)-&gt;getApplication()-&gt;run();
+
+     /** 输出响应*/
+     $response-&gt;response();
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21B5C" id="N21B5C"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.dispatcher.enableView.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.enableView.html" title=
+          "Yaf_Dispatcher::enableView"><code class="methodname">Yaf_Dispatcher::enableView</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.class.dispatcher.disableView.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.disableView.html" title=
+          "Yaf_Dispatcher::disableView"><code class="methodname">Yaf_Dispatcher::disableView</code></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.dispatcher.autoRender.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.autoRender.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.dispatcher.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.flushInstantly.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.flushInstantly.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Dispatcher::autoRender&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Dispatcher::flushInstantly</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

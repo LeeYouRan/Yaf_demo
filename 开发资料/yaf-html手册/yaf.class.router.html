@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>11.14. The Yaf_Router class</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.classes.html" title="第 11 章 内建的类">
+  <link rel="prev" href="yaf.class.__toString.__toString.html" title="Yaf_Response_Abstract::__toString">
+  <link rel="next" href="yaf.class.router.addRoute.html" title="Yaf_Router::addRoute">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">11.14. The Yaf_Router class</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.__toString.__toString.html" tppabs="http://www.laruence.com/manual/yaf.class.__toString.__toString.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">第 11 章 内建的类</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.router.addRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.addRoute.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="section" title="11.14. The Yaf_Router class">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both"><a name="yaf.class.router" id="yaf.class.router"></a>11.14. The
+          Yaf_Router class</h2>
+        </div>
+      </div>
+    </div><a name="N24C0A" class="indexterm" id="N24C0A"></a>
+
+    <div class="simplesect" title="简介">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.router.intro" id="yaf.class.router.intro"></a>简介</h3>
+          </div>
+        </div>
+      </div>
+
+      <p>Yaf的路由器, 负责分析请求中的request uri, 得出目标模板, 控制器, 动作.</p>
+
+      <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下, 也可以使用
+      Yaf\Router</p>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>
+      <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier">final </span>
+    <span class="classname">Yaf_Router</span>
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+
+    <span class="type">array </span>
+
+    <a class="link" href="yaf.class.router.html#yaf.class.router.props._routes" tppabs="http://www.laruence.com/manual/yaf.class.router.html#yaf.class.router.props._routes">
+     <code class="varname">_routes</code>
+    </a>
+   ;</code><br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+
+    <span class="type">string </span>
+
+    <a class="link" href="yaf.class.router.html#yaf.class.router.props._current_route" tppabs="http://www.laruence.com/manual/yaf.class.router.html#yaf.class.router.props._current_route">
+     <code class="varname">_current_route</code>
+    </a>
+   ;</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">Yaf_Router </span><span class="methodname">
+     <a class="link" href="yaf.class.router.addRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.addRoute.html" title="Yaf_Router::addRoute">
+      addRoute
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>,<br>                                                     <span class="methodparam">
+     <span class="type">Yaf_Route_Interface </span>
+     <span class="parameter">$route</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="">
+      addConfig
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">Yaf_Config_Abstract </span>
+     <span class="parameter">$routes_config</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">array </span><span class="methodname">
+     <a class="link" href="yaf.class.router.getRoutes.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getRoutes.html" title="Yaf_Router::getRoutes">
+      getRoutes
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">array </span><span class="methodname">
+     <a class="link" href="yaf.class.router.getRoutes.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getRoutes.html" title="Yaf_Router::getRoutes">
+      getRoute
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">string </span><span class="methodname">
+     <a class="link" href="yaf.class.router.getCurrentRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getCurrentRoute.html" title="Yaf_Router::getCurrentRoute">
+      getCurrentRoute
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.router.route.html" tppabs="http://www.laruence.com/manual/yaf.class.router.route.html" title="Yaf_Router::route">
+      route
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">Yaf_Request_Abstract </span>
+     <span class="parameter">$request</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.router.isModuleName.html" tppabs="http://www.laruence.com/manual/yaf.class.router.isModuleName.html" title="Yaf_Router::isModuleName">
+      isModuleName
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>);</code><br>}
+</pre>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>属性说明
+
+      <div class="variablelist">
+        <dl>
+          <dt><a name="yaf.class.router.props._routes" id="yaf.class.router.props._routes"></a> <span class=
+          "term"><code class="varname">_routes</code></span></dt>
+
+          <dd>
+            <p>路由器已有的路由协议栈, 默认的栈底总是名为"default"的<a class="link" href="">Yaf_Route_Static</a>路由协议的实例.</p>
+          </dd>
+
+          <dt><a name="yaf.class.router.props._current_route" id="yaf.class.router.props._current_route"></a>
+          <span class="term"><code class="varname">_current_route</code></span></dt>
+
+          <dd>
+            <p>在路由成功后, 路由生效的路由协议名</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.__toString.__toString.html" tppabs="http://www.laruence.com/manual/yaf.class.__toString.__toString.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.classes.html" tppabs="http://www.laruence.com/manual/yaf.classes.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.router.addRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.addRoute.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Response_Abstract::__toString&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Router::addRoute</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

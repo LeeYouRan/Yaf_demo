@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>7.4. 注册插件</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.plugin.html" title="第 7 章 使用插件">
+  <link rel="prev" href="yaf.plugin.define.html" title="7.3. 定义插件">
+  <link rel="next" href="yaf.plugin.layout.html" title="7.5. 插件目录">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">7.4. 注册插件</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.plugin.define.html" tppabs="http://www.laruence.com/manual/yaf.plugin.define.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">第 7 章 使用插件</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.plugin.layout.html" tppabs="http://www.laruence.com/manual/yaf.plugin.layout.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div class="section" title="7.4. 注册插件">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both"><a name="yaf.plugin.register" id="yaf.plugin.register"></a>7.4.
+          注册插件</h2>
+        </div>
+      </div>
+    </div>
+
+    <p>插件要生效, 还需要向Yaf_Dispatcher注册, 那么一般的插件的注册都会放在Bootstra中进行. 一个注册插件的例子如下:</p>
+
+    <div class="example">
+      <a name="N20756" id="N20756"></a>
+
+      <p class="title"><b>例 7.2. 注册插件</b></p>
+
+      <div class="example-contents">
+        <pre class="programlisting">
+                    
+&lt;?php
+class Bootstrap extends Yaf_Bootstrap_Abstract{
+
+        public function _initPlugin(Yaf_Dispatcher $dispatcher) {
+            $user = new UserPlugin();
+            $dispatcher-&gt;registerPlugin($user);
+        }
+}
+     
+    
+</pre>
+      </div>
+    </div><br class="example-break">
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.plugin.define.html" tppabs="http://www.laruence.com/manual/yaf.plugin.define.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.plugin.html" tppabs="http://www.laruence.com/manual/yaf.plugin.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.plugin.layout.html" tppabs="http://www.laruence.com/manual/yaf.plugin.layout.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">7.3. 定义插件&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;7.5. 插件目录</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

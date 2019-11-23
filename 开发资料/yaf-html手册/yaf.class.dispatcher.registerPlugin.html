@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Dispatcher::registerPlugin</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.dispatcher.html" title="11.4. The Yaf_Dispatcher class">
+  <link rel="prev" href="yaf.class.dispatcher.getRequest.html" title="Yaf_Dispatcher::getRequest">
+  <link rel="next" href="yaf.class.dispatcher.setAppDirectory.html" title="Yaf_Dispatcher::setAppDirectory">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Dispatcher::registerPlugin</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.dispatcher.getRequest.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.getRequest.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.4. The Yaf_Dispatcher class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.setAppDirectory.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setAppDirectory.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Dispatcher::registerPlugin">
+    <a name="yaf.class.dispatcher.registerPlugin" id="yaf.class.dispatcher.registerPlugin"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Dispatcher::registerPlugin</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N21DF0" class="indexterm" id="N21DF0"></a>
+
+    <div class="refsect1">
+      <a name="N21DF9" id="N21DF9"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">boolean&nbsp;</span><span class=
+      "methodname">Yaf_Dispatcher::registerPlugin</span>( <span class="methodparam"><span class=
+      "type">Yaf_Plugin_Abstract&nbsp;</span> <span class="parameter">$plugin</span></span> );</code>
+
+      <p>注册一个插件.</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21E15" id="N21E15"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$plugin</code></em></span></dt>
+
+          <dd>
+            <p>一个Yaf_Plugin_Abstract派生类的实例.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21E2E" id="N21E2E"></a> 返回值
+
+      <p>成功返回Yaf_Dispatcher, 失败返回FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21E35" id="N21E35"></a> 例子
+
+      <div class="example">
+        <a name="N21E3A" id="N21E3A"></a>
+
+        <p class="title"><b>例 11.28. <code class="function">Yaf_Dispatcher::registerPlugin</code>的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+&lt;?php
+/**
+ * 所有在Bootstrap类中, 以_init开头的方法, 都会被Yaf调用,
+ * 这些方法, 都接受一个参数:Yaf_Dispatcher $dispatcher
+ * 调用的次序, 和申明的次序相同
+ */
+class Bootstrap extends Yaf_Bootstrap_Abstract{
+  /**
+   * 注册一个插件
+   * 插件的目录是在application_directory/plugins
+   */
+  public function _initPlugin(Yaf_Dispatcher $dispatcher) {
+    $user = new UserPlugin();
+    $dispatcher-&gt;registerPlugin($user);
+  }
+}
+
+
+/** 
+ * 插件类定义
+ * UserPlugin.php
+ */
+class UserPlugin extends Yaf_Plugin_Abstract {
+    
+    public function routerStartup(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
+        echo "Plugin routerStartup called &lt;br/&gt;\n";
+    }
+
+    public function routerShutdown(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
+        echo "Plugin routerShutdown called &lt;br/&gt;\n";
+    }
+
+    public function dispatchLoopStartup(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
+        echo "Plugin DispatchLoopStartup called &lt;br/&gt;\n";
+    }
+
+    public function preDispatch(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
+        echo "Plugin PreDispatch called &lt;br/&gt;\n";
+    }
+
+    public function postDispatch(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
+        echo "Plugin postDispatch called &lt;br/&gt;\n";
+    }
+  
+    public function dispatchLoopShutdown(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
+        echo "Plugin DispatchLoopShutdown called &lt;br/&gt;\n";
+    }
+}
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21E48" id="N21E48"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.dispatcher.getRequest.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.getRequest.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.dispatcher.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.setAppDirectory.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setAppDirectory.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Dispatcher::getRequest&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Dispatcher::setAppDirectory</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

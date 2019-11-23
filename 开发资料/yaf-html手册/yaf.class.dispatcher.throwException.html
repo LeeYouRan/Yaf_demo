@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Dispatcher::throwException</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.dispatcher.html" title="11.4. The Yaf_Dispatcher class">
+  <link rel="prev" href="yaf.class.dispatcher.setDefaultAction.html" title="Yaf_Dispatcher::setDefaultAction">
+  <link rel="next" href="yaf.class.dispatcher.catchException.html" title="Yaf_Dispatcher::catchException">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Dispatcher::throwException</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href=
+        "yaf.class.dispatcher.setDefaultAction.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setDefaultAction.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.4. The Yaf_Dispatcher class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.catchException.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.catchException.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Dispatcher::throwException">
+    <a name="yaf.class.dispatcher.throwException" id="yaf.class.dispatcher.throwException"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Dispatcher::throwException</p>
+    </div><a name="N221B4" class="indexterm" id="N221B4"></a>
+
+    <p>(Since Yaf 1.0.0.5)</p>
+
+    <div class="refsect1">
+      <a name="N221C0" id="N221C0"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">boolean&nbsp;</span><span class=
+      "methodname">Yaf_Dispatcher::throwException</span>( <span class="methodparam"><span class=
+      "type">boolean&nbsp;</span> <span class="parameter">$switch</span></span> );</code>
+
+      <p>切换在Yaf出错的时候抛出异常, 还是触发错误.</p>
+
+      <p>当然,也可以在配置文件中使用ap.dispatcher.thorwException=$switch达到同样的效果, 默认的是开启状态.</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N221DF" id="N221DF"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$switch</code></em></span></dt>
+
+          <dd>
+            <p>如果为TRUE,则Yaf在出错的时候采用抛出异常的方式. 如果为FALSE, 则Yaf在出错的时候采用触发错误的方式.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N221F8" id="N221F8"></a> 返回值
+
+      <p>成功返回Yaf_Dispatcher, 失败返回FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N221FF" id="N221FF"></a> 例子
+
+      <div class="example">
+        <a name="N22204" id="N22204"></a>
+
+        <p class="title"><b>例 11.36. <code class="function">Yaf_Dispatcher::throwException</code>的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     $app = new Yaf_Application("conf.ini");
+     /**
+      * 关闭抛出异常
+      */
+     Yaf_Dispatcher::getInstance()-&gt;throwException(FALSE);
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N22212" id="N22212"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.dispatcher.catchException.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.catchException.html" title=
+          "Yaf_Dispatcher::catchException"><code class="methodname">Yaf_Dispatcher::catchException</code></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href=
+        "yaf.class.dispatcher.setDefaultAction.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setDefaultAction.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.dispatcher.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.catchException.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.catchException.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Dispatcher::setDefaultAction&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Dispatcher::catchException</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

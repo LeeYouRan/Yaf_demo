@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Controller_Abstract::initView</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.controller.html" title="11.9. The Yaf_Controller_Abstract class">
+  <link rel="prev" href="yaf.class.controller.getView.html" title="Yaf_Controller_Abstract::getView">
+  <link rel="next" href="yaf.class.controller.setViewPath.html" title="Yaf_Controller_Abstract::setViewPath">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Controller_Abstract::initView</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.controller.getView.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getView.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.9. The Yaf_Controller_Abstract class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.controller.setViewPath.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.setViewPath.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Controller_Abstract::initView">
+    <a name="yaf.class.controller.initView" id="yaf.class.controller.initView"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Controller_Abstract::initView</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N22EE1" class="indexterm" id="N22EE1"></a>
+
+    <div class="refsect1">
+      <a name="N22EEA" id="N22EEA"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">Yaf_View_Interface&nbsp;</span><span class=
+      "methodname">Yaf_Controller_Abstract::initView</span>( <span class="methodparam"><span class=
+      "type">void&nbsp;</span></span> );</code>
+
+      <p>初始化视图引擎, 因为Yaf采用延迟实例化视图引擎的策略, 所以只有在使用前调用此方法, 视图引擎才会被实例化</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N22F03" id="N22F03"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><span class="type">void</span></span></dt>
+
+          <dd>
+            <p>该方法不需要参数</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N22F1C" id="N22F1C"></a> 返回值
+
+      <p>Yaf_View_Interface实例</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N22F23" id="N22F23"></a> 例子
+
+      <div class="example">
+        <a name="N22F28" id="N22F28"></a>
+
+        <p class="title"><b>例 11.50. <code class="function">Yaf_Controller_Abstract::initView</code> 的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public funciton init() {
+            $view = $this-&gt;initView();
+            /* 此后就可以直接通过获取Yaf_Controller_Abstract::$_view
+            来访问当前视图引擎 */
+
+            $this-&gt;_view-&gt;assign("webroot", "http://domain.com/");
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.controller.getView.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getView.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.controller.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.controller.setViewPath.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.setViewPath.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Controller_Abstract::getView&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Controller_Abstract::setViewPath</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

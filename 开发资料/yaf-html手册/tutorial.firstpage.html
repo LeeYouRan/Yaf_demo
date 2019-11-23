@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>3.2. Hello World</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.tutorial.html" title="第 3 章 快速开始">
+  <link rel="prev" href="yaf.tutorial.html" title="第 3 章 快速开始">
+  <link rel="next" href="tutorial.last.html" title="3.3. 使用代码生成工具">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">3.2. Hello World</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.tutorial.html" tppabs="http://www.laruence.com/manual/yaf.tutorial.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">第 3 章 快速开始</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="tutorial.last.html" tppabs="http://www.laruence.com/manual/tutorial.last.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div class="sect1" title="3.2. Hello World">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both"><a name="tutorial.firstpage" id="tutorial.firstpage"></a>3.2. Hello
+          World</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="sect2" title="目录结构">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="tutorial.directory" id="tutorial.directory"></a>目录结构</h3>
+          </div>
+        </div>
+      </div>
+
+      <p>对于Yaf的应用, 都应该遵循类似下面的目录结构.</p>
+
+      <div class="example">
+        <a name="N203A3" id="N203A3"></a>
+
+        <p class="title"><b>例 3.1. 一个典型的目录结构</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
++ public
+  |- index.php //入口文件
+  |- .htaccess //重写规则    
+  |+ css
+  |+ img
+  |+ js
++ conf
+  |- application.ini //配置文件   
++ application
+  |+ controllers
+     |- Index.php //默认控制器
+  |+ views    
+     |+ index   //控制器
+        |- index.phtml //默认视图
+  |+ modules //其他模块
+  |+ library //本地类库
+  |+ models  //model目录
+  |+ plugins //插件目录
+
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="sect2" title="入口文件">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="tutorial.bootstrap" id="tutorial.bootstrap"></a>入口文件</h3>
+          </div>
+        </div>
+      </div>入口文件是所有请求的入口, 一般都借助于rewrite规则, 把所有的请求都重定向到这个入口文件.
+
+      <div class="example">
+        <a name="N203B7" id="N203B7"></a>
+
+        <p class="title"><b>例 3.2. 一个经典的入口文件<code class="filename">public/index.php</code></b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+&lt;?php
+define("APP_PATH",  realpath(dirname(__FILE__) . '/../')); /* 指向public的上一级 */
+$app  = new Yaf_Application(APP_PATH . "/conf/application.ini");
+$app-&gt;run();
+
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="sect2" title="重写规则">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="tutorial.rewrite" id="tutorial.rewrite"></a>重写规则</h3>
+          </div>
+        </div>
+      </div>
+
+      <p>除非我们使用基于query string的路由协议(<a class="link" href="">Yaf_Route_Simple</a>, <a class="link" href=
+      "">Yaf_Route_Supervar</a>), 否则我们就需要使用WebServer提供的Rewrite规则, 把所有这个应用的请求, 都定向到上面提到的入口文件.</p>
+
+      <div class="example">
+        <a name="N203D5" id="N203D5"></a>
+
+        <p class="title"><b>例 3.3. Apache的Rewrite (httpd.conf)</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+#.htaccess, 当然也可以写在httpd.conf
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* index.php
+
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+
+      <div class="example">
+        <a name="N203DF" id="N203DF"></a>
+
+        <p class="title"><b>例 3.4. Nginx的Rewrite (nginx.conf)</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+server {
+  listen ****;
+  server_name  domain.com;
+  root   document_root;
+  index  index.php index.html index.htm;
+
+  if (!-e $request_filename) {
+    rewrite ^/(.*)  /index.php/$1 last;
+  }
+}
+
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+
+      <div class="example">
+        <a name="N203E9" id="N203E9"></a>
+
+        <p class="title"><b>例 3.5. Lighttpd的Rewrite (lighttpd.conf)</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+$HTTP["host"] =~ "(www.)?domain.com$" {
+  url.rewrite = (
+     "^/(.+)/?$"  =&gt; "/index.php/$1",
+  )
+}
+
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+
+      <p><br class="example-break"></p>
+
+      <div class="example">
+        <a name="N203E10" id="N20310"></a>
+
+        <p class="title"><b>例 3.6. <a href="javascript:if(confirm('http://sae.sina.com.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://sae.sina.com.cn/'" tppabs="http://sae.sina.com.cn/" target="_blank">SAE</a>的Rewrite (config.yaml)</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+name: your_app_name
+version: 1
+handle:
+    - rewrite: if(!is_dir() && !is_file() && path ~ "^(.*)$" ) goto "/index.php"
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+      <div class="note" title="注意" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td valign="top" align="center" rowspan="2" width="25"><img alt="[注意]" src="note.gif" tppabs="http://www.laruence.com/manual/images/note.gif"></td>
+
+            <th align="left">注意</th>
+          </tr>
+
+          <tr>
+            <td valign="top" align="left">每种Server要启用Rewrite都需要特别设置, 如果对此有疑问.. RTFM</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="sect2" title="配置文件">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="tutorial.config" id="tutorial.config"></a>配置文件</h3>
+          </div>
+        </div>
+      </div>
+
+      <p>在Yaf中, 配置文件支持继承, 支持分节. 并对PHP的常量进行支持. 你不用担心配置文件太大造成解析性能问题, 因为Yaf会在第一个运行的时候载入配置文件, 把格式化后的内容保持在内存中. 直到配置文件有了修改,
+      才会再次载入.</p>
+
+      <div class="example">
+        <a name="N20400" id="N20400"></a>
+
+        <p class="title"><b>例 3.7. 一个简单的配置文件<code class="filename">application/conf/application.ini</code></b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+[product]
+;支持直接写PHP中的已定义常量
+application.directory=APP_PATH "/application/" 
+
+     
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="sect2" title="控制器">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="tutorial.controller" id="tutorial.controller"></a>控制器</h3>
+          </div>
+        </div>
+      </div>在Yaf中, 默认的模块/控制器/动作, 都是以Index命名的, 当然,这是可通过配置文件修改的.
+
+      <p>对于默认模块, 控制器的目录是在application目录下的controllers目录下, Action的命名规则是"名字+Action"</p>
+
+      <div class="example">
+        <a name="N20419" id="N20419"></a>
+
+        <p class="title"><b>例 3.8. 默认控制器<code class="filename">application/controllers/Index.php</code></b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+&lt;?php
+class IndexController extends Yaf_Controller_Abstract {
+   public function indexAction() {//默认Action
+       $this-&gt;getView()-&gt;assign("content", "Hello World");
+   }
+}
+?&gt;
+
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="sect2" title="视图文件">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="tutorial.view" id="tutorial.view"></a>视图文件</h3>
+          </div>
+        </div>
+      </div>Yaf支持简单的视图引擎, 并且支持用户自定义自己的视图引擎, 比如Smarty.
+
+      <p>对于默认模块, 视图文件的路径是在application目录下的views目录中以小写的action名的目录中.</p>
+
+      <div class="example">
+        <a name="N20432" id="N20432"></a>
+
+        <p class="title"><b>例 3.9. 一个默认Action的视图<code class=
+        "filename">application/views/index/index.phtml</code></b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+&lt;html&gt;
+ &lt;head&gt;
+   &lt;title&gt;Hello World&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;?php echo $content;?&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="sect2" title="运行">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="tutorial.run" id="tutorial.run"></a>运行</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="example">
+        <a name="N20448" id="N20448"></a>
+
+        <p class="title"><b>例 3.10. 在浏览器输入</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+http://www.yourhostname.com/application/index.php
+
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break">
+      看到了Hello World输出吧?</p>
+
+      <div class="note" title="注意" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td valign="top" align="center" rowspan="2" width="25"><img alt="[注意]" src="note.gif" tppabs="http://www.laruence.com/manual/images/note.gif"></td>
+
+            <th align="left">注意</th>
+          </tr>
+
+          <tr>
+            <td valign="top" align="left">
+              我没有看到Hello world
+
+              <p>如果没有看到, 那么请查看PHP的错误日志, 找出问题在哪里.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.tutorial.html" tppabs="http://www.laruence.com/manual/yaf.tutorial.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.tutorial.html" tppabs="http://www.laruence.com/manual/yaf.tutorial.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="tutorial.last.html" tppabs="http://www.laruence.com/manual/tutorial.last.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">第 3 章 快速开始&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;3.3. 使用代码生成工具</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Request_Abstract::getParams</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.request.html" title="11.12. The Yaf_Request_Abstract class">
+  <link rel="prev" href="yaf.class.request.getActionName.html" title="Yaf_Request_Abstract::getActionName">
+  <link rel="next" href="yaf.class.request.getParam.html" title="Yaf_Request_Abstract::getParam">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Request_Abstract::getParams</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.request.getActionName.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getActionName.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.12. The Yaf_Request_Abstract class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.request.getParam.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getParam.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Request_Abstract::getParams">
+    <a name="yaf.class.request.getParams" id="yaf.class.request.getParams"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Request_Abstract::getParams</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N243C2" class="indexterm" id="N243C2"></a>
+
+    <div class="refsect1">
+      <a name="N243CB" id="N243CB"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">array&nbsp;</span><span class=
+      "methodname">Yaf_Request_Abstract::getParams</span>( <span class="methodparam"><span class=
+      "type">void&nbsp;</span></span> );</code>
+
+      <p>获取当前请求中的所有路由参数, 路由参数不是指$_GET或者$_POST, 而是在路由过程中, 路由协议根据Request Uri分析出的请求参数.</p>
+
+      <p>比如, 对于默认的路由协议Yaf_Route_Static, 路由如下请求URL:
+      http://www.domain.com/module/controller/action/name1/value1/name2/value2/ 路由结束后将会得到俩个路由参数, name1和name2,
+      值分别是value1, value2.</p>
+
+      <div class="note" title="注意" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td valign="top" align="center" rowspan="2" width="25"><img alt="[注意]" src="note.gif" tppabs="http://www.laruence.com/manual/images/note.gif"></td>
+
+            <th align="left">注意</th>
+          </tr>
+
+          <tr>
+            <td valign="top" align="left">路由参数和$_GET,$_POST一样, 是来自用户的输入, 不是可信的. 使用前需要做安全过滤.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N243EA" id="N243EA"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><span class="type">void</span></span></dt>
+
+          <dd>
+            <p>本方法不需要参数</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24403" id="N24403"></a> 返回值
+
+      <p>当前所有的路由参数</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2440A" id="N2440A"></a> 例子
+
+      <div class="example">
+        <a name="N2440F" id="N2440F"></a>
+
+        <p class="title"><b>例 11.69. <code class="function">Yaf_Request_Abstract::getParams</code>的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public funciton indexAction() {
+            $this-&gt;getRequest()-&gt;getParams();
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.request.getActionName.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getActionName.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.request.html" tppabs="http://www.laruence.com/manual/yaf.class.request.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.request.getParam.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getParam.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Request_Abstract::getActionName&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Request_Abstract::getParam</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Router::getCurrentRoute</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.router.html" title="11.14. The Yaf_Router class">
+  <link rel="prev" href="yaf.class.router.getRoute.html" title="Yaf_Router::getRoute">
+  <link rel="next" href="yaf.class.router.isModuleName.html" title="Yaf_Router::isModuleName">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Router::getCurrentRoute</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.router.getRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getRoute.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.14. The Yaf_Router class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.router.isModuleName.html" tppabs="http://www.laruence.com/manual/yaf.class.router.isModuleName.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Router::getCurrentRoute">
+    <a name="yaf.class.router.getCurrentRoute" id="yaf.class.router.getCurrentRoute"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Router::getCurrentRoute</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N24F85" class="indexterm" id="N24F85"></a>
+
+    <div class="refsect1">
+      <a name="N24F8E" id="N24F8E"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">string&nbsp;</span><span class=
+      "methodname">Yaf_Router::getCurrentRoute</span>( <span class="methodparam"><span class=
+      "type">void&nbsp;</span></span> );</code>
+
+      <p>在路由结束以后, 获取路由匹配成功, 路由生效的路由协议名</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24FA7" id="N24FA7"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><span class="type">void</span></span></dt>
+
+          <dd>
+            <p>本方法不需要参数</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24FC0" id="N24FC0"></a> 返回值
+
+      <p>成功返回生效的路由协议名, 失败返回NULL</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24FC7" id="N24FC7"></a> 例子
+
+      <div class="example">
+        <a name="N24FCC" id="N24FCC"></a>
+
+        <p class="title"><b>例 11.87. <code class="function">Yaf_Router::getCurrentRoute</code> 的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+&lt;?php
+class UserPlugin extends Yaf_Plugin_Abstract {
+
+        public function routerShutdown(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
+                echo "生效的路由协议是:" . Yaf_Dispatcher::getInstance()-&gt;getRouter()-&gt;getCurrentRoute();
+        }
+}
+?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24FDA" id="N24FDA"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.router.getRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getRoute.html" title="Yaf_Router::getRoute"><code class=
+          "methodname">Yaf_Router::getRoute</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.class.router.getRoutes.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getRoutes.html" title="Yaf_Router::getRoutes"><code class=
+          "methodname">Yaf_Router::getRoutes</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.routes.html" tppabs="http://www.laruence.com/manual/yaf.routes.html" title="第 8 章 路由和路由协议">路由和路由协议</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.router.getRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getRoute.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.router.html" tppabs="http://www.laruence.com/manual/yaf.class.router.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.router.isModuleName.html" tppabs="http://www.laruence.com/manual/yaf.class.router.isModuleName.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Router::getRoute&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Router::isModuleName</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

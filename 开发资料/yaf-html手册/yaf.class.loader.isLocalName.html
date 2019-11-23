@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Loader::isLocalName</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+  <link rel="up" href="yaf.class.loader.html" title="11.3. The Yaf_Loader class">
+  <link rel="prev" href="yaf.class.loader.registerLocalNamespace.html" title="Yaf_Loader::registerLocalNamespace">
+  <link rel="next" href="yaf.class.loader.getLocalNamespace.html" title="Yaf_Loader::getLocalNamespace">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Loader::isLocalName</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href=
+        "yaf.class.loader.registerLocalNamespace.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.registerLocalNamespace.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.3. The Yaf_Loader class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href=
+        "yaf.class.loader.getLocalNamespace.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.getLocalNamespace.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Loader::isLocalName">
+    <a name="yaf.class.loader.isLocalName" id="yaf.class.loader.isLocalName"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>åç§°</h2>
+
+      <p>Yaf_Loader::isLocalName</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N213CC" class="indexterm" id="N213CC"></a>
+
+    <div class="refsect1">
+      <a name="N213D5" id="N213D5"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">boolean&nbsp;</span><span class=
+      "methodname">Yaf_Loader::isLocalName</span>( <span class="methodparam"><span class="type">string&nbsp;</span>
+      <span class="parameter">$class_name</span></span> );</code>
+
+      <p>åˆ¤æ–­ä¸€ä¸ªç±», æ˜¯å¦æ˜¯æœ¬åœ°ç±».</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N213F1" id="N213F1"></a> å‚æ•°
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$class_name</code></em></span></dt>
+
+          <dd>
+            <p>å­—ç¬¦ä¸²çš„ç±»å, æœ¬æ–¹æ³•ä¼šæ ¹æ®ä¸‹åˆ’çº¿åˆ†éš”æˆªå–å‡ºç±»åçš„ç¬¬ä¸€éƒ¨åˆ†, ç„¶ååœ¨Yaf_Loaderçš„_local_nsä¸­åˆ¤æ–­æ˜¯å¦å­˜åœ¨, ä»è€Œç¡®å®šç»“æœ.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2140A" id="N2140A"></a> è¿”å›å€¼
+
+      <p><span class="returnvalue">boolean</span></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21414" id="N21414"></a> ä¾‹å­
+
+      <div class="example">
+        <a name="N21419" id="N21419"></a>
+
+        <p class="title"><b>ä¾‹ 11.15. <code class="function">Yaf_Loader::isLocalName</code> çš„ä¾‹å­</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+&lt;?php
+Yaf_Loader::getInstance()-&gt;registrLocalNamespace("Foo");
+
+Yaf_Loader::getInstance()-&gt;isLocalName("Foo_Bar");//TRUE
+Yaf_Loader::getInstance()-&gt;isLocalName("FooBar");//FALSE
+?&gt;
+
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21427" id="N21427"></a> å‚è§
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.loader.registerLocalNamespace.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.registerLocalNamespace.html" title=
+          "Yaf_Loader::registerLocalNamespace"><code class=
+          "methodname">Yaf_Loader::registerLocalNamespace</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.class.loader.getLocalNamespace.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.getLocalNamespace.html" title=
+          "Yaf_Loader::getLocalNamespace"><code class="methodname">Yaf_Loader::getLocalNamespace</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.class.loader.clearLocalNamespace.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.clearLocalNamespace.html" title=
+          "Yaf_Loader::clearLocalNamespace"><code class="methodname">Yaf_Loader::clearLocalNamespace</code></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href=
+        "yaf.class.loader.registerLocalNamespace.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.registerLocalNamespace.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.loader.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.html">ä¸Šä¸€çº§</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href=
+        "yaf.class.loader.getLocalNamespace.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.getLocalNamespace.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Loader::registerLocalNamespace&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">èµ·å§‹é¡µ</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Loader::getLocalNamespace</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>11.16. The Yaf_Exception class</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.classes.html" title="第 11 章 内建的类">
+  <link rel="prev" href="yaf.class.route.html" title="11.15. The Yaf_Route class">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">11.16. The Yaf_Exception class</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.route.html" tppabs="http://www.laruence.com/manual/yaf.class.route.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">第 11 章 内建的类</th>
+
+        <td align="right" width="20%">&nbsp;</td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="section" title="11.16. The Yaf_Exception class">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both"><a name="yaf.class.exception" id="yaf.class.exception"></a>11.16. The
+          Yaf_Exception class</h2>
+        </div>
+      </div>
+    </div><a name="N25163" class="indexterm" id="N25163"></a>
+
+    <div class="simplesect" title="简介">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.exception.intro" id="yaf.class.exception.intro"></a>简介</h3>
+          </div>
+        </div>
+      </div>
+
+      <p>Yaf_Exception是Yaf使用的异常类型, 它继承自Exception, 并实现了异常链.</p>
+
+      <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下, 也可以使用
+      Yaf\Exception</p>
+    </div>
+
+    <div class="note" title="注意" style="margin-left: 0.5in; margin-right: 0.5in;">
+      <table border="0" summary="Note">
+        <tr>
+          <td valign="top" align="center" rowspan="2" width="25"><img alt="[注意]" src="note.gif" tppabs="http://www.laruence.com/manual/images/note.gif"></td>
+
+          <th align="left">注意</th>
+        </tr>
+
+        <tr>
+          <td valign="top" align="left">只有在yaf.throw_exception(php.ini)或者yaf.throwException(配置文件)开启的情况下, Yaf才会抛出异常,
+          否则Yaf在出错的时候将trigger_error, 这种情况下, 可以使用<a class="link" href="yaf.class.dispatcher.setErrorHandler.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setErrorHandler.html" title=
+          "Yaf_Dispatcher::setErrorHandler">Yaf_Dispatcher::setErrorHandler</a>来捕获错误.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>
+      <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier"> </span>
+    <span class="classname">Yaf_Exception</span>
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">string </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props.message" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props.message">
+     <code class="varname">message</code>
+    </a>
+   ;</code><br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">string </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props.code" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props.code">
+     <code class="varname">code</code>
+    </a>
+   ;</code><br><code class="fieldsynopsis">  
+    <span class="modifier">private </span>
+    <span class="type">Exception </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props._previous" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props._previous">
+     <code class="varname">_previous</code>
+    </a>
+   ;</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">void </span><span class="methodname">
+     <a class="link" href="">
+      __construct
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$message</span>
+    </span>,<br>                                                  <span class="methodparam">
+     <span class="type">int </span>
+     <span class="parameter">$code</span>
+     <span class="initializer">= 0</span>
+    </span>,<br>                                                  <span class="methodparam">
+     <span class="type">Exception </span>
+     <span class="parameter">$previous</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">final public </span><span class=
+"type">string </span><span class="methodname">
+     Exception::getMessage
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">final public </span><span class=
+"type">int </span><span class="methodname">
+     Exception::getCode
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public final </span><span class=
+"type">Exception </span><span class="methodname">
+     <a class="link" href="">
+      getPrevious
+     </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">final public </span><span class=
+"type">string </span><span class="methodname">
+     Exception::getFile
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">final public </span><span class=
+"type">int </span><span class="methodname">
+     Exception::getLine
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br>}
+</pre>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>属性说明
+
+      <div class="variablelist">
+        <dl>
+          <dt><a name="yaf.class.exception.props.message" id="yaf.class.exception.props.message"></a><span class=
+          "term"><code class="varname">message</code></span></dt>
+
+          <dd>
+            <p>异常信息</p>
+          </dd>
+
+          <dt><a name="yaf.class.exception.props.code" id="yaf.class.exception.props.code"></a><span class=
+          "term"><code class="varname">code</code></span></dt>
+
+          <dd>
+            <p>异常代码</p>
+          </dd>
+
+          <dt><a name="yaf.class.exception.props._previous" id="yaf.class.exception.props._previous"></a><span class=
+          "term"><code class="varname">_previous</code></span></dt>
+
+          <dd>
+            <p>此异常之前的异常</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="Yaf_Exception_StartupError">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.exception.startuperror" id=
+            "yaf.class.exception.startuperror"></a>Yaf_Exception_StartupError</h3>
+          </div>
+        </div>
+      </div><a name="N2528C" class="indexterm" id="N2528C"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.exception.startuperror.intro" id=
+              "yaf.class.exception.startuperror.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>继承自Yaf_Exception, 在Yaf启动失败的时候抛出.</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Exception\StartupError</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier"> </span>
+    <span class="classname">Yaf_Exception_StartupError</span>
+    extends
+    Yaf_Exception
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">string </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props.code" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props.code">
+     <code class="varname">code</code>
+    </a>
+    <span class="initializer">= YAF_ERR_STARTUP_FAILED</span>
+   ;</code><br>}
+</pre>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="Yaf_Exception_RouterFailed">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.exception.routerfailed" id=
+            "yaf.class.exception.routerfailed"></a>Yaf_Exception_RouterFailed</h3>
+          </div>
+        </div>
+      </div><a name="N252D5" class="indexterm" id="N252D5"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.exception.routerfailed.intro" id=
+              "yaf.class.exception.routerfailed.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>继承自Yaf_Exception, 在路由失败的时候抛出.</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Exception\RouterFailed</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier"> </span>
+    <span class="classname">Yaf_Exception_RouterFailed</span>
+    extends
+    Yaf_Exception
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">string </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props.code" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props.code">
+     <code class="varname">code</code>
+    </a>
+    <span class="initializer">= YAF_ERR_ROUTER_FAILED</span>
+   ;</code><br>}
+</pre>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="Yaf_Exception_DispatchFailed">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.exception.dispatchfailed" id=
+            "yaf.class.exception.dispatchfailed"></a>Yaf_Exception_DispatchFailed</h3>
+          </div>
+        </div>
+      </div><a name="N2531E" class="indexterm" id="N2531E"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.exception.dispatchfailed.intro" id=
+              "yaf.class.exception.dispatchfailed.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>继承自Yaf_Exception, 在分发失败的时候抛出.</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Exception\DispatchFailed</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier"> </span>
+    <span class="classname">Yaf_Exception_DispatchFailed</span>
+    extends
+    Yaf_Exception
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">string </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props.code" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props.code">
+     <code class="varname">code</code>
+    </a>
+    <span class="initializer">= YAF_ERR_DISPATCH_FAILED</span>
+   ;</code><br>}
+</pre>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="Yaf_Exception_LoadFailed">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.exception.loadfailed" id=
+            "yaf.class.exception.loadfailed"></a>Yaf_Exception_LoadFailed</h3>
+          </div>
+        </div>
+      </div><a name="N25367" class="indexterm" id="N25367"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.exception.loadfailed.intro" id=
+              "yaf.class.exception.loadfailed.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>继承自Yaf_Exception, 在加载需要类失败的时候抛出.</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Exception\LoadFailed</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier"> </span>
+    <span class="classname">Yaf_Exception_LoadFailed</span>
+    extends
+    Yaf_Exception
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">string </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props.code" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props.code">
+     <code class="varname">code</code>
+    </a>
+    <span class="initializer">= YAF_ERR_AUTOLOAD_FAILED</span>
+   ;</code><br>}
+</pre>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="Yaf_Exception_LoadFailed_Module">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.exception.loadfailed.module" id=
+            "yaf.class.exception.loadfailed.module"></a>Yaf_Exception_LoadFailed_Module</h3>
+          </div>
+        </div>
+      </div><a name="N253B0" class="indexterm" id="N253B0"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.exception.loadfailed.module.intro" id=
+              "yaf.class.exception.loadfailed.module.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>继承自Yaf_Exception_LoadFailed, 在找不到路由指定的模块时抛出</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Exception\LoadFailed\Module</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier"> </span>
+    <span class="classname">Yaf_Exception_LoadFailed_Module</span>
+    extends
+    Yaf_Exception_LoadFailed
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">string </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props.code" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props.code">
+     <code class="varname">code</code>
+    </a>
+    <span class="initializer">= YAF_ERR_NOTFOUND_MODULE</span>
+   ;</code><br>}
+</pre>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="Yaf_Exception_LoadFailed_Controller">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.exception.loadfailed.controller" id=
+            "yaf.class.exception.loadfailed.controller"></a>Yaf_Exception_LoadFailed_Controller</h3>
+          </div>
+        </div>
+      </div><a name="N253F9" class="indexterm" id="N253F9"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.exception.loadfailed.controller.intro" id=
+              "yaf.class.exception.loadfailed.controller.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>继承自Yaf_Exception_LoadFailed, 在找不到路由指定的控制器时抛出</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Exception\LoadFailed\Controller</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier"> </span>
+    <span class="classname">Yaf_Exception_LoadFailed_Controller</span>
+    extends
+    Yaf_Exception_LoadFailed
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">string </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props.code" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props.code">
+     <code class="varname">code</code>
+    </a>
+    <span class="initializer">= YAF_ERR_NOTFOUND_CONTROLLER</span>
+   ;</code><br>}
+</pre>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="Yaf_Exception_LoadFailed_Action">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.exception.loadfailed.action" id=
+            "yaf.class.exception.loadfailed.action"></a>Yaf_Exception_LoadFailed_Action</h3>
+          </div>
+        </div>
+      </div><a name="N25442" class="indexterm" id="N25442"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.exception.loadfailed.action.intro" id=
+              "yaf.class.exception.loadfailed.action.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>继承自Yaf_Exception_LoadFailed, 在找不到路由指定的动作时抛出</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Exception\LoadFailed\Action</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier"> </span>
+    <span class="classname">Yaf_Exception_LoadFailed_Action</span>
+    extends
+    Yaf_Exception_LoadFailed
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">string </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props.code" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props.code">
+     <code class="varname">code</code>
+    </a>
+    <span class="initializer">= YAF_ERR_NOTFOUND_ACTION</span>
+   ;</code><br>}
+</pre>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="Yaf_Exception_LoadFailed_View">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.exception.loadfailed.view" id=
+            "yaf.class.exception.loadfailed.view"></a>Yaf_Exception_LoadFailed_View</h3>
+          </div>
+        </div>
+      </div><a name="N2548B" class="indexterm" id="N2548B"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.exception.loadfailed.view.intro" id=
+              "yaf.class.exception.loadfailed.view.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>继承自Yaf_Exception_LoadFailed, 在找不到指定的视图模板文件时抛出</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Exception\LoadFailed\View</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier"> </span>
+    <span class="classname">Yaf_Exception_LoadFailed_View</span>
+    extends
+    Yaf_Exception_LoadFailed
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">string </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props.code" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props.code">
+     <code class="varname">code</code>
+    </a>
+    <span class="initializer">= YAF_ERR_NOTFOUND_VIEW</span>
+   ;</code><br>}
+</pre>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="Yaf_Exception_TypeError">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.exception.typeerror" id=
+            "yaf.class.exception.typeerror"></a>Yaf_Exception_TypeError</h3>
+          </div>
+        </div>
+      </div><a name="N254D4" class="indexterm" id="N254D4"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.exception.typeerror.intro" id=
+              "yaf.class.exception.typeerror.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>继承自Yaf_Exception, 在关键逻辑参数出错的时候抛出</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Exception\TypeError</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier"> </span>
+    <span class="classname">Yaf_Exception_TypeError</span>
+    extends
+    Yaf_Exception
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">string </span>
+    <a class="link" href="yaf.class.exception.html#yaf.class.exception.props.code" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.props.code">
+     <code class="varname">code</code>
+    </a>
+    <span class="initializer">= YAF_ERR_TYPE_ERROR</span>
+   ;</code><br>}
+</pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.route.html" tppabs="http://www.laruence.com/manual/yaf.class.route.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.classes.html" tppabs="http://www.laruence.com/manual/yaf.classes.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">11.15. The Yaf_Route class&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

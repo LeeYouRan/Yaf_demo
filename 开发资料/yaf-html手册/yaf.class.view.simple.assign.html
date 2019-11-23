@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_View_Simple::assign</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.view.html#yaf.class.view.simple" title="The Yaf_View_Simple class">
+  <link rel="prev" href="yaf.class.view.html" title="11.11. The Yaf_View_Interface class">
+  <link rel="next" href="yaf.class.view.simple.render.html" title="Yaf_View_Simple::render">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_View_Simple::assign</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.view.html" tppabs="http://www.laruence.com/manual/yaf.class.view.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">The Yaf_View_Simple class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.view.simple.render.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.render.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_View_Simple::assign">
+    <a name="yaf.class.view.simple.assign" id="yaf.class.view.simple.assign"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_View_Simple::assign</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.0)</p><a name="N23543" class="indexterm" id="N23543"></a>
+
+    <div class="refsect1">
+      <a name="N2354C" id="N2354C"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">boolean&nbsp;</span><span class=
+      "methodname">Yaf_View_Simple::assign</span>( <span class="methodparam"><span class="type">mixed&nbsp;</span>
+      <span class="parameter">$name</span></span> ,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="methodparam"><span class="type">mixed&nbsp;</span> <span class="parameter">$value</span>
+      <span class="initializer">=&nbsp;NULL</span></span> );</code>
+
+      <p>为视图引擎分配一个模板变量, 在视图模板中可以直接通过${$name}获取模板变量值</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N23574" id="N23574"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$name</code></em></span></dt>
+
+          <dd>
+            <p>字符串或者关联数组, 如果为字符串, 则$value不能为空, 此字符串代表要分配的变量名. 如果为数组, 则$value须为空, 此参数为变量名和值的关联数组.</p>
+          </dd>
+
+          <dt><span class="term"><em class="parameter"><code>$value</code></em></span></dt>
+
+          <dd>
+            <p>分配的模板变量值</p>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="note" title="注意" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td valign="top" align="center" rowspan="2" width="25"><img alt="[注意]" src="note.gif" tppabs="http://www.laruence.com/manual/images/note.gif"></td>
+
+            <th align="left">注意</th>
+          </tr>
+
+          <tr>
+            <td valign="top" align="left">如果$name不是合法的PHP变量名, 比如整数,或者是包含"|"的字符串, 那么在视图模板文件中, 将不能直接通过${$name}来访问这个变量.
+            当然, 你还是可以在视图模板文件中通过$this-&gt;_tpl_vars[$name]来访问这个变量.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2359F" id="N2359F"></a> 返回值
+
+      <p>成功返回Yaf_View_Simple, 失败返回FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N235A6" id="N235A6"></a> 例子
+
+      <div class="example">
+        <a name="N235AB" id="N235AB"></a>
+
+        <p class="title"><b>例 11.57. <code class="function">Yaf_View_Simple::assign</code> 的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public funciton init() {
+           $params = array(
+               'name' =&gt; 'value',
+           );
+ 
+           $this-&gt;getView()-&gt;assign($params)-&gt;assign("foo", "bar");
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N235B9" id="N235B9"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.view.simple.__set.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.__set.html" title=
+          "Yaf_View_Simple::__set">Yaf_View_Simple::__set</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.view.html" tppabs="http://www.laruence.com/manual/yaf.class.view.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.view.html#yaf.class.view.simple" tppabs="http://www.laruence.com/manual/yaf.class.view.html#yaf.class.view.simple">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.view.simple.render.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.render.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">11.11. The Yaf_View_Interface class&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_View_Simple::render</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

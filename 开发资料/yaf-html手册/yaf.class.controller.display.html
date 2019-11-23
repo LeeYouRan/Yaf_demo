@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Controller_Abstract::display</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.controller.html" title="11.9. The Yaf_Controller_Abstract class">
+  <link rel="prev" href="yaf.class.controller.render.html" title="Yaf_Controller_Abstract::render">
+  <link rel="next" href="yaf.class.controller.forward.html" title="Yaf_Controller_Abstract::forward">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Controller_Abstract::display</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.controller.render.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.render.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.9. The Yaf_Controller_Abstract class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.controller.forward.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.forward.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Controller_Abstract::display">
+    <a name="yaf.class.controller.display" id="yaf.class.controller.display"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Controller_Abstract::display</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N230C9" class="indexterm" id="N230C9"></a>
+
+    <div class="refsect1">
+      <a name="N230D2" id="N230D2"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">boolean&nbsp;</span><span class=
+      "methodname">Yaf_Controller_Abstract::display</span>( <span class="methodparam"><span class=
+      "type">string&nbsp;</span> <span class="parameter">$action</span></span> ,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="methodparam"><span class="type">array&nbsp;</span> <span class="parameter">$tpl_vars</span>
+      <span class="initializer">=&nbsp;NULL</span></span> );</code>
+
+      <p>渲染视图模板, 并直接输出渲染结果</p>
+
+      <div class="note" title="注意" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td valign="top" align="center" rowspan="2" width="25"><img alt="[注意]" src="note.gif" tppabs="http://www.laruence.com/manual/images/note.gif"></td>
+
+            <th align="left">注意</th>
+          </tr>
+
+          <tr>
+            <td valign="top" align="left">此方法是对Yaf_View_Interface::display的包装</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N230FD" id="N230FD"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$action</code></em></span></dt>
+
+          <dd>
+            <p>要渲染的动作名</p>
+          </dd>
+
+          <dt><span class="term"><em class="parameter"><code>$tpl_vars</code></em></span></dt>
+
+          <dd>
+            <p>传递给视图引擎的渲染参数, 当然也可以使用Yaf_View_Interface::assign来替代</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N23125" id="N23125"></a> 返回值
+
+      <p>成功返回TRUE,失败返回FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2312C" id="N2312C"></a> 例子
+
+      <div class="example">
+        <a name="N23131" id="N23131"></a>
+
+        <p class="title"><b>例 11.54. <code class="function">Yaf_Controller_Abstract::display</code> 的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public funciton init() {
+           /* 首先关闭自动渲染 */
+           Yaf_Dispatcher::getInstance()-&gt;disableView();
+        }
+
+        public function indexAction() {
+            $this-&gt;initView();
+
+            /* 自己输出响应 */
+            $this-&gt;display("test.phtml", array("name" =&gt; "value"));
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.controller.render.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.render.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.controller.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.controller.forward.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.forward.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Controller_Abstract::render&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Controller_Abstract::forward</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

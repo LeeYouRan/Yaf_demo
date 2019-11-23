@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>11.15. The Yaf_Route class</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+  <link rel="up" href="yaf.classes.html" title="ç¬¬ 11 ç«  å†…å»ºçš„ç±»">
+  <link rel="prev" href="yaf.class.router.route.html" title="Yaf_Router::route">
+  <link rel="next" href="yaf.class.exception.html" title="11.16. The Yaf_Exception class">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">11.15. The Yaf_Route class</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.router.route.html" tppabs="http://www.laruence.com/manual/yaf.class.router.route.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <th align="center" width="60%">ç¬¬ 11 ç«  å†…å»ºçš„ç±»</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.exception.html" tppabs="http://www.laruence.com/manual/yaf.class.exception.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="section" title="11.15. The Yaf_Route class">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both"><a name="yaf.class.route" id="yaf.class.route"></a>11.15. The Yaf_Route
+          class</h2>
+        </div>
+      </div>
+    </div><a name="N250EF" class="indexterm" id="N250EF"></a>
+
+    <div class="simplesect" title="ç®€ä»‹">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.route.intro" id="yaf.class.route.intro"></a>ç®€ä»‹</h3>
+          </div>
+        </div>
+      </div>
+
+      <p>Yaf_Route_Interfaceæ˜¯Yafè·¯ç”±åè®®çš„æ ‡å‡†æ¥å£, å®ƒçš„å­˜åœ¨ä½¿å¾—ç”¨æˆ·å¯ä»¥è‡ªå®šä¹‰è·¯ç”±åè®®</p>
+
+      <p>åœ¨PHP5.3ä¹‹å, æ‰“å¼€<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>çš„æƒ…å†µä¸‹, ä¹Ÿå¯ä»¥ä½¿ç”¨
+      Yaf\Route_Interface</p>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>
+      <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier">Interface </span>
+    <span class="classname">Yaf_Route</span>
+   </span> {<br><code class="methodsynopsis">  <span class="modifier">abstract </span><span class=
+"modifier">public </span><span class="type">boolean </span><span class="methodname">
+     route
+    </span>(<span class="methodparam">
+     <span class="type">Yaf_Request_Abstract </span>
+     <span class="parameter">$request</span>
+    </span>);</code><br>}
+</pre>
+    </div>
+
+    <div class="refsect1">
+      <a name="N25132" id="N25132"></a> å‚è§
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.routes.static.html" tppabs="http://www.laruence.com/manual/yaf.routes.static.html" title="8.5. è·¯ç”±åè®®è¯¦è§£"><code class=
+          "classname">Yaf_Route_Static</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.routes.static.html#yaf.routes.simple" tppabs="http://www.laruence.com/manual/yaf.routes.static.html#yaf.routes.simple" title="Yaf_Route_Simple"><code class=
+          "classname">Yaf_Route_Simple</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.routes.static.html#yaf.routes.supervar" tppabs="http://www.laruence.com/manual/yaf.routes.static.html#yaf.routes.supervar" title="Yaf_Route_Supervar"><code class=
+          "classname">Yaf_Route_Supervar</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.routes.static.html#yaf.routes.rewrite" tppabs="http://www.laruence.com/manual/yaf.routes.static.html#yaf.routes.rewrite" title="Yaf_Route_Rewrite"><code class=
+          "classname">Yaf_Route_Rewrite</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.routes.static.html#yaf.routes.regex" tppabs="http://www.laruence.com/manual/yaf.routes.static.html#yaf.routes.regex" title="Yaf_Route_Regex"><code class=
+          "classname">Yaf_Route_Regex</code></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.router.route.html" tppabs="http://www.laruence.com/manual/yaf.class.router.route.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.classes.html" tppabs="http://www.laruence.com/manual/yaf.classes.html">ä¸Šä¸€çº§</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.exception.html" tppabs="http://www.laruence.com/manual/yaf.class.exception.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Router::route&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">èµ·å§‹é¡µ</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;11.16. The Yaf_Exception class</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

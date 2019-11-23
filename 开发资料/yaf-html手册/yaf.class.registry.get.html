@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Registry::get</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+  <link rel="up" href="yaf.class.registry.html" title="11.6. Yaf_Registry">
+  <link rel="prev" href="yaf.class.registry.set.html" title="Yaf_Registry::set">
+  <link rel="next" href="yaf.class.registry.has.html" title="Yaf_Registry::has">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Registry::get</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.registry.set.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.set.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.6. Yaf_Registry</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.registry.has.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.has.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Registry::get">
+    <a name="yaf.class.registry.get" id="yaf.class.registry.get"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>åç§°</h2>
+
+      <p>Yaf_Registry::get</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N22591" class="indexterm" id="N22591"></a>
+
+    <div class="refsect1">
+      <a name="N2259A" id="N2259A"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="modifier">static&nbsp;</span><span class=
+      "type">Yaf_Registry&nbsp;</span><span class="methodname">Yaf_Registry::get</span>( <span class=
+      "methodparam"><span class="type">string&nbsp;</span> <span class="parameter">$name</span></span> );</code>
+
+      <p>è·å–æ³¨å†Œè¡¨ä¸­å¯„å­˜çš„é¡¹</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N225B9" id="N225B9"></a> å‚æ•°
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$name</code></em></span></dt>
+
+          <dd>
+            <p>è¦è·å–çš„é¡¹çš„åå­—</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N225D2" id="N225D2"></a> è¿”å›å€¼
+
+      <p>æˆåŠŸè¿”å›è¦è·å–çš„æ³¨å†Œé¡¹çš„å€¼, å¤±è´¥è¿”å›FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N225D9" id="N225D9"></a> ä¾‹å­
+
+      <div class="example">
+        <a name="N225DE" id="N225DE"></a>
+
+        <p class="title"><b>ä¾‹ 11.39. <code class="function">Yaf_Registry::get</code> çš„ä¾‹å­</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     /** å­˜å…¥ */
+     Yaf_Registry::set('config', Yaf_Application::app()-&gt;getConfig());
+
+     /* ä¹‹åå¯ä»¥åœ¨ä»»ä½•åœ°æ–¹è·å–åˆ° */
+     $config-&gt;Yaf_Registry::get("config");
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.registry.set.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.set.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.registry.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.html">ä¸Šä¸€çº§</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.registry.has.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.has.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Registry::set&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">èµ·å§‹é¡µ</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Registry::has</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

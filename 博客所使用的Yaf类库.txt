@@ -1,0 +1,2 @@
+博客使用的yaf类：
+https://github.com/zhengyin/izhengyin-yaf-libs

@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>11.8. The Yaf_Config_Abstract class</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.classes.html" title="第 11 章 内建的类">
+  <link rel="prev" href="yaf.class.session.html" title="11.7. Yaf_Session">
+  <link rel="next" href="yaf.class.controller.html" title="11.9. The Yaf_Controller_Abstract class">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">11.8. The Yaf_Config_Abstract class</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.session.html" tppabs="http://www.laruence.com/manual/yaf.class.session.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">第 11 章 内建的类</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.controller.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="section" title="11.8. The Yaf_Config_Abstract class">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both"><a name="yaf.class.config" id="yaf.class.config"></a>11.8. The
+          Yaf_Config_Abstract class</h2>
+        </div>
+      </div>
+    </div><a name="N22814" class="indexterm" id="N22814"></a>
+
+    <div class="simplesect" title="简介">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.config.intro" id="yaf.class.config.intro"></a>简介</h3>
+          </div>
+        </div>
+      </div>
+
+      <p>Yaf_Config_Abstract被设计在应用程序中简化访问和使用配置数据。它为在应用程序代码中访问这样的配置数据提 供了一个基于用户接口的嵌入式对象属性。配置数据可能来自于各种支持等级结构数据存储的媒体。
+      Yaf_Config_Abstract实现了Countable, ArrayAccess 和 Iterator 接口。
+      这样，可以基于Yaf_Config_Abstract对象使用count()函数和PHP语句如foreach, 也可以通过数组方式访问Yaf_Config_Abstract的元素.</p>
+
+      <p>Yaf_Config_INI为存储在Ini文件的配置数据提供了适配器。 Yaf_Config_Simple为存储在PHP的数组中的配置数据提供了适配器。</p>
+
+      <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下, 也可以使用
+      Yaf\Config_Abstract</p>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>
+      <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier">Abstract </span>
+    <span class="classname">Yaf_Config_Abstract</span>
+    implements
+    <span class="interfacename">Iterator</span>
+    , <span class="interfacename">ArrayAccess</span>
+    , <span class="interfacename">Countable</span>
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">
+     array
+     </span>
+    <a class="link" href="yaf.class.config.html#yaf.class.config.props._config" tppabs="http://www.laruence.com/manual/yaf.class.config.html#yaf.class.config.props._config">
+     <code class="varname">_config</code>
+    </a>
+   ;</code><br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+    <span class="type">
+     array
+     </span>
+    <a class="link" href="">
+     <code class="varname">_readonly</code>
+    </a>
+   ;</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     get
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="varname">$name </span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     __get
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="varname">$name </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     __isset
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="varname">$name </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     __set
+    </span>(<span class="methodparam">
+     <span class="type">string|int </span>
+     <span class="varname">$name </span>
+    </span>,<br>                                <span class="methodparam">
+     <span class="type">mixed </span>
+     <span class="varname">$value </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     set
+    </span>(<span class="methodparam">
+     <span class="type">string|int </span>
+     <span class="varname">$name </span>
+    </span>,<br>                              <span class="methodparam">
+     <span class="type">mixed </span>
+     <span class="varname">$value </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     count
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     offsetGet
+    </span>(<span class="methodparam">
+     <span class="type">string|int </span>
+     <span class="varname">$name </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     offsetSet
+    </span>(<span class="methodparam">
+     <span class="type">string|int </span>
+     <span class="varname">$name </span>
+    </span>,<br>                                    <span class="methodparam">
+     <span class="type">mixed </span>
+     <span class="varname">$value </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     offsetExists
+    </span>(<span class="methodparam">
+     <span class="type">string|int </span>
+     <span class="varname">$name </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     offsetUnset
+    </span>(<span class="methodparam">
+     <span class="type">string|int </span>
+     <span class="varname">$name </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">void </span><span class="methodname">
+     rewind
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     key
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     next
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     current
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     valid
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">array </span><span class="methodname">
+     toArray
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     readOnly
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br>}
+</pre>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>属性说明
+
+      <div class="variablelist">
+        <dl>
+          <dt><a name="yaf.class.config.props._config" id="yaf.class.config.props._config"></a><span class=
+          "term"><code class="varname">_config</code></span></dt>
+
+          <dd>
+            <p>配置实际的保存容器</p>
+          </dd>
+
+          <dt><a name="yaf.class.readonly.props._readonly" id="yaf.class.readonly.props._readonly"></a><span class=
+          "term"><code class="varname">_readonly</code></span></dt>
+
+          <dd>
+            <p>表示配置是否容许修改, 对于Yaf_Config_Ini来说, 永远都是TRUE</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="The Yaf_Config_Ini class">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.config.ini" id="yaf.class.config.ini"></a>The Yaf_Config_Ini
+            class</h3>
+          </div>
+        </div>
+      </div><a name="N22A01" class="indexterm" id="N22A01"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.config.ini.intro" id="yaf.class.config.ini.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>Yaf_Config_INI为存储在Ini文件的配置数据提供了适配器。</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Config_Ini</p>
+
+        <div class="important" title="重要" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Important">
+            <tr>
+              <td valign="top" align="center" rowspan="2" width="25"><img alt="[重要]" src="important.gif" tppabs="http://www.laruence.com/manual/images/important.gif"></td>
+
+              <th align="left">重要</th>
+            </tr>
+
+            <tr>
+              <td valign="top" align="left">当使用INI文件作为Yaf_Application的配置的时候, 可以打开<a class="link" href=
+              "yaf.ini.html#yaf.install.ini.cache_config" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.cache_config">ap.cache_config</a>来提升性能</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="simplesect" title="说明">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.config.ini.usage" id="yaf.class.config.ini.usage"></a>说明</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>Yaf_Config_Ini允许开发者通过嵌套的对象属性语法在应用程序中用熟悉的 INI 格式存储和读取配置数据。INI格式在提供拥有配置数据键的等级结构和配置数据节之间的继承能力方面具有专长。
+        配置数据等级结构通过用点或者句号(.)分离键值。一个节可以扩展或者通过在节的名称之后带一个冒号(:)和被继承的配置数据的节的名称来从另一个节继承。</p>
+
+        <div class="example">
+          <a name="N22A2E" id="N22A2E"></a>
+
+          <p class="title"><b>例 11.42. INI文件</b></p>
+
+          <div class="example-contents">
+            <pre class="programlisting">
+
+[base]
+database.master.host = localhost
+[production : base]
+;Yaf的配置
+application.directory    = /usr/local/www/production
+;应用的配置
+webhost                  = www.example.com
+database.adapter         = pdo_mysql
+database.params.host     = db.example.com
+database.params.username = dbuser
+database.params.password = secret
+database.params.dbname   = dbname
+; 开发站点配置数据从生产站点配置数据集成并如果需要可以重写
+[dev : production]
+application.directory    = /usr/dev/htdocs
+database.params.host     = dev.example.com
+database.params.username = devuser
+database.params.password = devsecret
+
+
+   
+</pre>
+          </div>
+        </div>
+
+        <p><br class="example-break">
+        dev节, 将得到production节的所有配置, 并间接获得base节的配置 并且覆盖application.directory的配置为"/usr/dev/htdocs"</p>
+
+        <p>Yaf_Config_Abstract实现了__get方法, 所以获取配置将会变得很容易</p>
+
+        <div class="example">
+          <a name="N22A3B" id="N22A3B"></a>
+
+          <p class="title"><b>例 11.43. 获取配置</b></p>
+
+          <div class="example-contents">
+            <pre class="programlisting">
+
+$config = new Yaf_Config_Ini('/path/to/config.ini', 'staging');
+echo $config-&gt;database-&gt;get("params")-&gt;host;   // 输出 "dev.example.com"
+echo $config-&gt;get("database")-&gt;params-&gt;dbname; // 输出 "dbname"
+
+   
+</pre>
+          </div>
+        </div>
+
+        <p><br class="example-break"></p>
+      </div>
+    </div>
+
+    <div lang="zh_cn" class="section" title="The Yaf_Config_Simple class">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.config.simple" id="yaf.class.config.simple"></a>The Yaf_Config_Simple
+            class</h3>
+          </div>
+        </div>
+      </div><a name="N22A50" class="indexterm" id="N22A50"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.config.simple.intro" id="yaf.class.config.simple.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>Yaf_Config_Simple为存储在数组中的配置数据提供了适配器。</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\Config_Simple</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.session.html" tppabs="http://www.laruence.com/manual/yaf.class.session.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.classes.html" tppabs="http://www.laruence.com/manual/yaf.classes.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.controller.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">11.7. Yaf_Session&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;11.9. The Yaf_Controller_Abstract class</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

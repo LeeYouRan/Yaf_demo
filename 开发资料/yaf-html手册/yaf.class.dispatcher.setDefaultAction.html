@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Dispatcher::setDefaultAction</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.dispatcher.html" title="11.4. The Yaf_Dispatcher class">
+  <link rel="prev" href="yaf.class.dispatcher.setDefaultModule.html" title="Yaf_Dispatcher::setDefaultModule">
+  <link rel="next" href="yaf.class.dispatcher.throwException.html" title="Yaf_Dispatcher::throwException">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Dispatcher::setDefaultAction</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href=
+        "yaf.class.dispatcher.setDefaultModule.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setDefaultModule.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.4. The Yaf_Dispatcher class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.throwException.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.throwException.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Dispatcher::setDefaultAction">
+    <a name="yaf.class.dispatcher.setDefaultAction" id="yaf.class.dispatcher.setDefaultAction"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Dispatcher::setDefaultAction</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N22136" class="indexterm" id="N22136"></a>
+
+    <div class="refsect1">
+      <a name="N2213F" id="N2213F"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">boolean&nbsp;</span><span class=
+      "methodname">Yaf_Dispatcher::setDefaultAction</span>( <span class="methodparam"><span class=
+      "type">string&nbsp;</span> <span class="parameter">$default_module_name</span></span> );</code>
+
+      <p>设置路由的默认动作, 如果在路由结果中不包含动作信息, 则会使用此默认动作作为路由动作结果</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2215B" id="N2215B"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$default_module_name</code></em></span></dt>
+
+          <dd>
+            <p>默认动作名, 请注意需要全部小写</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N22174" id="N22174"></a> 返回值
+
+      <p>成功返回Yaf_Dispatcher, 失败返回FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2217B" id="N2217B"></a> 例子
+
+      <div class="example">
+        <a name="N22180" id="N22180"></a>
+
+        <p class="title"><b>例 11.35. <code class="function">Yaf_Dispatcher::setDefaultAction</code>的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+&lt;?php
+class Bootstrap extends Yaf_Bootstrap_Abstract{
+
+        public function _initDefaultName(Yaf_Dispatcher $dispatcher) {
+                /**
+                 * 这个只是举例, 本身Yaf默认的就是"Index"
+                 */
+                $dispatcher-&gt;setDefaultController("Index")-&gt;setDefaultAction("index");
+        }
+}
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2218E" id="N2218E"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.dispatcher.setDefaultModule.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setDefaultModule.html" title=
+          "Yaf_Dispatcher::setDefaultModule">Yaf_Dispatcher::setDefaultModule</a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.class.dispatcher.setDefaultController.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setDefaultController.html" title=
+          "Yaf_Dispatcher::setDefaultController">Yaf_Dispatcher::setDefaultController</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href=
+        "yaf.class.dispatcher.setDefaultModule.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setDefaultModule.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.dispatcher.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.throwException.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.throwException.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Dispatcher::setDefaultModule&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Dispatcher::throwException</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

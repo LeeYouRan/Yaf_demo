@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_View_Simple::__get</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+  <link rel="up" href="yaf.class.view.html#yaf.class.view.simple" title="The Yaf_View_Simple class">
+  <link rel="prev" href="yaf.class.view.simple.__set.html" title="Yaf_View_Simple::__set">
+  <link rel="next" href="yaf.class.view.simple.get.html" title="Yaf_View_Simple::get">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_View_Simple::__get</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.view.simple.__set.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.__set.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <th align="center" width="60%">The Yaf_View_Simple class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.view.simple.get.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.get.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_View_Simple::__get">
+    <a name="yaf.class.view.simple.__get" id="yaf.class.view.simple.__get"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>åç§°</h2>
+
+      <p>Yaf_View_Simple::__get</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.0)</p><a name="N23847" class="indexterm" id="N23847"></a>
+
+    <div class="refsect1">
+      <a name="N23850" id="N23850"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">string&nbsp;</span><span class=
+      "methodname">Yaf_View_Simple::__get</span>( <span class="methodparam"><span class="type">string&nbsp;</span>
+      <span class="parameter">$name</span></span> );</code>
+
+      <p>è·å–è§†å›¾å¼•æ“çš„ä¸€ä¸ªæ¨¡æ¿å˜é‡å€¼</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2386C" id="N2386C"></a> å‚æ•°
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$name</code></em></span></dt>
+
+          <dd>
+            <p>æ¨¡æ¿å˜é‡å</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N23885" id="N23885"></a> è¿”å›å€¼
+
+      <p>æˆåŠŸè¿”å›å˜é‡å€¼,å¤±è´¥è¿”å›NULL</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2388C" id="N2388C"></a> ä¾‹å­
+
+      <div class="example">
+        <a name="N23891" id="N23891"></a>
+
+        <p class="title"><b>ä¾‹ 11.63. <code class="function">Yaf_View_Simple::__get</code> çš„ä¾‹å­</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public function init() {
+           $this-&gt;initView();
+        }
+        public funciton indexAction() {
+           //é€šè¿‡__getç›´æ¥è·å–å˜é‡å€¼
+           echo $this-&gt;_view-&gt;name;
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2389F" id="N2389F"></a> å‚è§
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.view.simple.get.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.get.html" title=
+          "Yaf_View_Simple::get">Yaf_View_Simple::get</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.view.simple.__set.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.__set.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.view.html#yaf.class.view.simple" tppabs="http://www.laruence.com/manual/yaf.class.view.html#yaf.class.view.simple">ä¸Šä¸€çº§</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.view.simple.get.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.get.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_View_Simple::__set&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">èµ·å§‹é¡µ</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_View_Simple::get</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

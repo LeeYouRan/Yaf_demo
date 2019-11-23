@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Config::addConfig</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.router.html" title="11.14. The Yaf_Router class">
+  <link rel="prev" href="yaf.class.router.addRoute.html" title="Yaf_Router::addRoute">
+  <link rel="next" href="yaf.class.router.getRoutes.html" title="Yaf_Router::getRoutes">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Config::addConfig</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.router.addRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.addRoute.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.14. The Yaf_Router class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.router.getRoutes.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getRoutes.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Config::addConfig">
+    <a name="yaf.class.router.addConfig" id="yaf.class.router.addConfig"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Config::addConfig</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N24DDE" class="indexterm" id="N24DDE"></a>
+
+    <div class="refsect1">
+      <a name="N24DE7" id="N24DE7"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">boolean&nbsp;</span><span class=
+      "methodname">Yaf_Config::addConfig</span>( <span class="methodparam"><span class=
+      "type">Yaf_Config_Abstract&nbsp;</span> <span class="parameter">$routes_config</span></span> );</code>
+
+      <p>给路由器通过配置增加一簇路由协议</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24E03" id="N24E03"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$routers_config</code></em></span></dt>
+
+          <dd>
+            <p>一个Yaf_Config_Abstract的实例, 它包含了一簇路由协议的定义, 一个例子是:</p>
+
+            <div class="example">
+              <a name="N24E16" id="N24E16"></a>
+
+              <p class="title"><b>例 11.83. INI路由协议簇的例子</b></p>
+
+              <div class="example-contents">
+                <pre class="programlisting">
+
+;ini配置文件
+[product]
+routes.regex.type="regex"
+routes.regex.route="#^list/([^/]*)/([^/]*)#"
+routes.regex.default.controller=Index
+routes.regex.default.action=action
+routes.regex.map.1=name
+routes.regex.map.2=value
+
+routes.simple.type="simple"
+routes.simple.controller=c
+routes.simple.module=m
+routes.simple.action=a
+
+routes.supervar.type="supervar"
+routes.supervar.varname=r
+
+routes.rewrite.type="rewrite"
+routes.rewrite.route="/product/:name/:value"
+routes.rewrite.default.controller=product
+routes.rewrite.default.action=info
+
+    
+</pre>
+              </div>
+            </div>
+
+            <p><br class="example-break"></p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24E26" id="N24E26"></a> 返回值
+
+      <p>成功返回Yaf_Config, 失败返回FALSE, 并抛出异常(或者触发错误)</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24E2D" id="N24E2D"></a> 例子
+
+      <div class="example">
+        <a name="N24E32" id="N24E32"></a>
+
+        <p class="title"><b>例 11.84. <code class="function">Yaf_Config::addConfig</code> 的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+&lt;?php
+
+class Bootstrap extends Yaf_Bootstrap_Abstract{
+        public function _initRoute(Yaf_Dispatcher $dispatcher) {
+                $router = Yaf_Dispatcher::getInstance()-&gt;getRouter();
+                $router-&gt;addConfig(Yaf_Registry::get("config")-&gt;routes);
+?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N24E40" id="N24E40"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.router.addRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.addRoute.html" title="Yaf_Router::addRoute"><code class=
+          "methodname">Yaf_Router::addRoute</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.routes.html" tppabs="http://www.laruence.com/manual/yaf.routes.html" title="第 8 章 路由和路由协议">路由和路由协议</a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.router.addRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.addRoute.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.router.html" tppabs="http://www.laruence.com/manual/yaf.class.router.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.router.getRoutes.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getRoutes.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Router::addRoute&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Router::getRoutes</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

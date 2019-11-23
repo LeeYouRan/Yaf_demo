@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>11.9. The Yaf_Controller_Abstract class</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.classes.html" title="第 11 章 内建的类">
+  <link rel="prev" href="yaf.class.config.html" title="11.8. The Yaf_Config_Abstract class">
+  <link rel="next" href="yaf.class.controller.getModuleName.html" title="Yaf_Controller_Abstract::getModuleName">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">11.9. The Yaf_Controller_Abstract class</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.config.html" tppabs="http://www.laruence.com/manual/yaf.class.config.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">第 11 章 内建的类</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href=
+        "yaf.class.controller.getModuleName.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getModuleName.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="section" title="11.9. The Yaf_Controller_Abstract class">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both"><a name="yaf.class.controller" id="yaf.class.controller"></a>11.9. The
+          Yaf_Controller_Abstract class</h2>
+        </div>
+      </div>
+    </div><a name="N22A75" class="indexterm" id="N22A75"></a>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>简介
+
+      <p>Yaf_Controller_Abstract是Yaf的MVC体系的核心部分. MVC是指Model-View-Controller, 是一个用于分离应用逻辑和表现逻辑的设计模式.</p>
+
+      <p>Yaf_Controller_Abstract体系具有可扩展性, 可以通过继承已有的类, 来实现这个抽象类, 从而添加应用自己的应用逻辑.</p>
+
+      <p>对于Controller来说, 真正的执行体是在Controller中定义的一个一个的动作, 当然这些动作也可以定义在Controller外:参看<a class="link" href=
+      "yaf.class.controller.html#yaf.class.controller.props.actions" tppabs="http://www.laruence.com/manual/yaf.class.controller.html#yaf.class.controller.props.actions">Yaf_Controller_Abstract::$action</a></p>
+
+      <p>与一般的框架不同, 在Yaf中, 可以定义动作的参数, 这些参数的值来自对Request的路由结果中的同名参数值. 比如对于如下的控制器:</p>
+
+      <div class="example">
+        <a name="N22A91" id="N22A91"></a>
+
+        <p class="title"><b>例 11.44. <code class="function">Yaf_Controller_Abstract参数动作</code> 的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public function indexAction($name, $value) {
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break">
+      在使用默认路由的情况下, 对于请求http://domain.com/index/index/name/a/value/2我们知道会在Request对象中生成俩个参数name和value,
+      而注意到动作indexAction的参数, 与此同名, 于是在indexAction中, 可以有如下两种方式来获取这俩个参数:</p>
+
+      <div class="example">
+        <a name="N22A9D" id="N22A9D"></a>
+
+        <p class="title"><b>例 11.45. <code class="function">Yaf_Controller_Abstract参数动作</code> 的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public function indexAction($name, $value) {
+            //直接获取参数;
+            echo $name, $value; //a2
+            //通过Request对象获取
+            echo $this-&gt;getRequest()-&gt;getParam("name"); //a
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+
+      <div class="note" title="注意" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td valign="top" align="center" rowspan="2" width="25"><img alt="[注意]" src="note.gif" tppabs="http://www.laruence.com/manual/images/note.gif"></td>
+
+            <th align="left">注意</th>
+          </tr>
+
+          <tr>
+            <td valign="top" align="left">需要注意的是, 这些参数是来自用户请求URL, 所以使用前一定要做安全化过滤. 另外, 为了防止PHP抛出参数缺失的警告,
+            请尽量定义有默认值的参数.</td>
+          </tr>
+        </table>
+      </div>
+
+      <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下, 也可以使用
+      Yaf\Controller_Abstract.</p>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>
+      <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier">abstract </span>
+    <span class="classname">Yaf_Controller_Abstract</span>
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+
+    <span class="type">array </span>
+
+    <a class="link" href="yaf.class.controller.html#yaf.class.controller.props.actions" tppabs="http://www.laruence.com/manual/yaf.class.controller.html#yaf.class.controller.props.actions">
+     <code class="varname">actions</code>
+    </a>
+   ;</code><br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+
+    <span class="type">Yaf_Request_Abstract </span>
+
+    <a class="link" href="yaf.class.controller.html#yaf.class.controller.props._request" tppabs="http://www.laruence.com/manual/yaf.class.controller.html#yaf.class.controller.props._request">
+     <code class="varname">_request</code>
+    </a>
+   ;</code><br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+
+    <span class="type">Yaf_Response_Abstract </span>
+
+    <a class="link" href="yaf.class.controller.html#yaf.class.controller.props._response" tppabs="http://www.laruence.com/manual/yaf.class.controller.html#yaf.class.controller.props._response">
+     <code class="varname">_response</code>
+    </a>
+   ;</code><br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+
+    <span class="type">Yaf_View_Interface </span>
+
+    <a class="link" href="yaf.class.controller.html#yaf.class.controller.props._view" tppabs="http://www.laruence.com/manual/yaf.class.controller.html#yaf.class.controller.props._view">
+     <code class="varname">_view</code>
+    </a>
+   ;</code><br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+
+    <span class="type">string </span>
+
+    <a class="link" href="yaf.class.controller.html#yaf.class.controller.props._script_path" tppabs="http://www.laruence.com/manual/yaf.class.controller.html#yaf.class.controller.props._script_path">
+     <code class="varname">_script_path</code>
+    </a>
+   ;</code><br><code class="methodsynopsis">  <span class="modifier">private </span><span class=
+"type">void </span><span class="methodname">
+     __construct
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">void </span><span class="methodname">
+     init
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">string </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.getModuleName.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getModuleName.html" title=
+"Yaf_Controller_Abstract::getModuleName">getModuleName</a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">Yaf_Request_Abstract </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.getRequest.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getRequest.html" title=
+"Yaf_Controller_Abstract::getRequest">getRequest</a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">Yaf_Response_Abstract </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.getResponse.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getResponse.html" title=
+"Yaf_Controller_Abstract::getResponse">getResponse</a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">Yaf_View_Interface </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.getView.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getView.html" title="Yaf_Controller_Abstract::getView">getView</a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">Yaf_View_Interface </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.initView.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.initView.html" title="Yaf_Controller_Abstract::initView">initView</a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.setViewPath.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.setViewPath.html" title=
+"Yaf_Controller_Abstract::setViewPath">setViewPath</a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$view_directory</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">string </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.getViewPath.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getViewPath.html" title=
+"Yaf_Controller_Abstract::getViewPath">getViewPath</a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">Yaf_Response_Abstract </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.render.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.render.html" title="Yaf_Controller_Abstract::render">render</a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$action_name</span>
+    </span>,<br>                                                 <span class="methodparam">
+     <span class="type">array </span>
+     <span class="parameter">$tpl_vars</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.display.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.display.html" title="Yaf_Controller_Abstract::display">display</a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$action_name</span>
+    </span>,<br>                                    <span class="methodparam">
+     <span class="type">array </span>
+     <span class="parameter">$tpl_vars</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.forward.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.forward.html" title="Yaf_Controller_Abstract::forward">forward</a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$action</span>
+    </span>,<br>                                    <span class="methodparam">
+     <span class="type">array </span>
+     <span class="parameter">$invoke_args</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.forward.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.forward.html" title="Yaf_Controller_Abstract::forward">forward</a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$controller</span>
+    </span>,<br>                                    <span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$action</span>
+    </span>,<br>                                    <span class="methodparam">
+     <span class="type">array </span>
+     <span class="parameter">$invoke_args</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.forward.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.forward.html" title="Yaf_Controller_Abstract::forward">forward</a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$module</span>
+    </span>,<br>                                    <span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$controller</span>
+    </span>,<br>                                    <span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$action</span>
+    </span>,<br>                                    <span class="methodparam">
+     <span class="type">array </span>
+     <span class="parameter">$invoke_args</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.controller.redirect.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.redirect.html" title="Yaf_Controller_Abstract::redirect">redirect</a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$url</span>
+    </span>);</code><br>}
+</pre>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>属性说明
+
+      <div class="variablelist">
+        <dl>
+          <dt><a name="yaf.class.controller.props.actions" id="yaf.class.controller.props.actions"></a> <span class=
+          "term"><code class="varname">actions</code></span></dt>
+
+          <dd>
+            <p>有些时候为了拆分比较大的Controller, 使得代码更加清晰和易于管理, Yaf支持将具体的动作分开定义. 每个动作都需要实现 <a class="link" href=
+            "yaf.class.action.html" tppabs="http://www.laruence.com/manual/yaf.class.action.html" title="11.10. The Yaf_Action_Abstract class">Yaf_Action_Abstract</a>
+            就可以通过定义Yaf_Controller_Abstract::$actions来指明那些动作对应于具体的那些分离的类. 比如:</p>
+            <pre class="screen">
+       
+       &lt;?php
+        class IndexController extends Yaf_Controller_Abstract {
+              public $actions = array (
+                 "index" =&gt; "actions/Index.php",
+              );
+        }
+        
+       
+</pre>
+
+            <p>这样, 当路由到动作Index的时候, 就会加载APPLICATION_PATH . "/actions/Index.php", 并且在这个脚本文件中寻找IndexAction(可通过<a class=
+            "link" href="yaf.ini.html#yaf.install.ini.name_suffix" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.name_suffix">yaf.name_suffix</a>和<a class="link" href=
+			"yaf.ini.html#yaf.install.ini.name_separator" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.name_separator">yaf.name_separator</a>来改变具体命名形式), 继而调用这个类的execute方法.</p>
+
+            <div class="note" title="注意" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Note">
+                <tr>
+                  <td valign="top" align="center" rowspan="2" width="25"><img alt="[注意]" src="note.gif" tppabs="http://www.laruence.com/manual/images/note.gif"></td>
+
+                  <th align="left">注意</th>
+                </tr>
+
+                <tr>
+                  <td valign="top" align="left">在<a class="link" href="">yaf.st_compatible</a>打开的情况下, 会产生额外的查找逻辑.</td>
+                </tr>
+              </table>
+            </div>
+          </dd>
+
+          <dt><a name="yaf.class.controller.props._request" id="yaf.class.controller.props._request"></a> <span class=
+          "term"><code class="varname">_request</code></span></dt>
+
+          <dd>
+            <p>当前的请求实例, 属性的值由Yaf_Dispatcher保证, 一般通过Yaf_Controller_Abstract::getRequest来获取此属性.</p>
+          </dd>
+
+          <dt><a name="yaf.class.controller.props._response" id="yaf.class.controller.props._response"></a>
+          <span class="term"><code class="varname">_response</code></span></dt>
+
+          <dd>
+            <p>当前的响应对象, 属性的值由Yaf_Dispatcher保证, 一般通过Yaf_Controller_Abstract::getResponse来获取此属性.</p>
+          </dd>
+
+          <dt><a name="yaf.class.controller.props._view" id="yaf.class.controller.props._view"></a> <span class=
+          "term"><code class="varname">_view</code></span></dt>
+
+          <dd>
+            <p>视图引擎, Yaf才会延时实例化视图引擎来提高性能,
+            所以这个属性直到显示的调用了Yaf_Controller_Abstract::getView或者Yaf_Controller_Abstract::initView以后才可用</p>
+          </dd>
+
+          <dt><a name="yaf.class.controller.props._script_path" id="yaf.class.controller.props._script_path"></a>
+          <span class="term"><code class="varname">_script_path</code></span></dt>
+
+          <dd>
+            <p>视图文件的目录, 默认值由Yaf_Dispatcher保证, 可以通过Yaf_Controller_Abstract::setViewPath来改变这个值.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N232B1" id="N232B1"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.action.html" tppabs="http://www.laruence.com/manual/yaf.class.action.html" title="11.10. The Yaf_Action_Abstract class"><code class=
+          "classname">Yaf_Action_Abstract</code></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.config.html" tppabs="http://www.laruence.com/manual/yaf.class.config.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.classes.html" tppabs="http://www.laruence.com/manual/yaf.classes.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href=
+        "yaf.class.controller.getModuleName.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getModuleName.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">11.8. The Yaf_Config_Abstract class&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Controller_Abstract::getModuleName</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

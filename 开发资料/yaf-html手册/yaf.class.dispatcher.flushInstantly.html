@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Dispatcher::flushInstantly</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+  <link rel="up" href="yaf.class.dispatcher.html" title="11.4. The Yaf_Dispatcher class">
+  <link rel="prev" href="yaf.class.dispatcher.returnResponse.html" title="Yaf_Dispatcher::returnResponse">
+  <link rel="next" href="yaf.class.dispatcher.setErrorHandler.html" title="Yaf_Dispatcher::setErrorHandler">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Dispatcher::flushInstantly</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href=
+        "yaf.class.dispatcher.returnResponse.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.returnResponse.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.4. The Yaf_Dispatcher class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.setErrorHandler.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setErrorHandler.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Dispatcher::flushInstantly">
+    <a name="yaf.class.dispatcher.flushInstantly" id="yaf.class.dispatcher.flushInstantly"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>åç§°</h2>
+
+      <p>Yaf_Dispatcher::flushInstantly</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N21B8B" class="indexterm" id="N21B8B"></a>
+
+    <div class="refsect1">
+      <a name="N21B94" id="N21B94"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">void&nbsp;</span><span class=
+      "methodname">Yaf_Dispatcher::flushInstantly</span>( <span class="methodparam"><span class=
+      "type">boolean&nbsp;</span> <span class="parameter">$switch</span></span> );</code>
+
+      <p>åˆ‡æ¢è‡ªåŠ¨å“åº”. åœ¨<a class="link" href="yaf.class.dispatcher.enableView.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.enableView.html" title=
+      "Yaf_Dispatcher::enableView"><code class="methodname">Yaf_Dispatcher::enableView()</code></a>çš„æƒ…å†µä¸‹,
+      ä¼šä½¿å¾—Yaf_Dispatcherè°ƒç”¨Yaf_Controller_Abstract::displayæ–¹æ³•, ç›´æ¥è¾“å‡ºå“åº”ç»™è¯·æ±‚ç«¯</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21BB3" id="N21BB3"></a> å‚æ•°
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$switch</code></em></span></dt>
+
+          <dd>
+            <p>å¼€å¯çŠ¶æ€</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21BCC" id="N21BCC"></a> è¿”å›å€¼
+
+      <p>æˆåŠŸè¿”å›Yaf_Dispatcher, å¤±è´¥è¿”å›FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21BD3" id="N21BD3"></a> ä¾‹å­
+
+      <div class="example">
+        <a name="N21BD8" id="N21BD8"></a>
+
+        <p class="title"><b>ä¾‹ 11.23. <code class="function">Yaf_Dispatcher::flushInstantly</code>çš„ä¾‹å­</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     $application = new Yaf_Application("config.ini");
+
+     /* ç«‹å³è¾“å‡ºå“åº” */
+     Yaf_Dispatcher::getInstance()-&gt;flushInstantly(TRUE);
+
+     /* æ­¤æ—¶ä¼šè°ƒç”¨Yaf_Controller_Abstract::displayæ–¹æ³• */
+     $application-&gt;run();
+
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21BE6" id="N21BE6"></a> å‚è§
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.dispatcher.enableView.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.enableView.html" title=
+          "Yaf_Dispatcher::enableView"><code class="methodname">Yaf_Dispatcher::enableView</code></a></td>
+        </tr>
+
+        <tr>
+          <td><a class="link" href="yaf.class.dispatcher.disableView.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.disableView.html" title=
+          "Yaf_Dispatcher::disableView"><code class="methodname">Yaf_Dispatcher::disableView</code></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href=
+        "yaf.class.dispatcher.returnResponse.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.returnResponse.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.dispatcher.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.html">ä¸Šä¸€çº§</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href=
+        "yaf.class.dispatcher.setErrorHandler.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setErrorHandler.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Dispatcher::returnResponse&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">èµ·å§‹é¡µ</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Dispatcher::setErrorHandler</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

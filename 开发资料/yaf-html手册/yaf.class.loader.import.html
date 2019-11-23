@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Loader::import</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.loader.html" title="11.3. The Yaf_Loader class">
+  <link rel="prev" href="yaf.class.loader.getInstance.html" title="Yaf_Loader::getInstance">
+  <link rel="next" href="yaf.class.loader.autoload.html" title="Yaf_Loader::autoload">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Loader::import</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.loader.getInstance.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.getInstance.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.3. The Yaf_Loader class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.loader.autoload.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.autoload.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Loader::import">
+    <a name="yaf.class.loader.import" id="yaf.class.loader.import"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Loader::import</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N21242" class="indexterm" id="N21242"></a>
+
+    <div class="refsect1">
+      <a name="N2124B" id="N2124B"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="modifier">static&nbsp;</span><span class=
+      "type">boolean&nbsp;</span><span class="methodname">Yaf_Loader::import</span>( <span class=
+      "methodparam"><span class="type">string&nbsp;</span> <span class="parameter">$file_name</span></span> );</code>
+
+      <p>导入一个PHP文件, 因为Yaf_Loader::import只是专注于一次包含, 所以要比传统的require_once性能好一些</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2126A" id="N2126A"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$file_name</code></em></span></dt>
+
+          <dd>
+            <p>要载入的文件路径, 可以为绝对路径和相对路径. 如果为相对路径, 则会以应用的本地类目录(ap.library)为基目录.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21283" id="N21283"></a> 返回值
+
+      <p>成功返回TRUE, 失败返回FALSE.</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2128A" id="N2128A"></a> 例子
+
+      <div class="example">
+        <a name="N2128F" id="N2128F"></a>
+
+        <p class="title"><b>例 11.12. <code class="function">Yaf_Loader::import</code> 的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+
+&lt;?php
+//绝对路径
+Yaf_Loader::import("/usr/local/foo.php);
+
+//相对路径, 会在APPLICATION_PATH."/library"下加载
+Yaf_loader::import("plugins/User.php");
+?&gt;
+
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2129D" id="N2129D"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.loader.autoload.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.autoload.html" title="Yaf_Loader::autoload"><code class=
+          "methodname">Yaf_Loader::autoload</code></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.loader.getInstance.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.getInstance.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.loader.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.loader.autoload.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.autoload.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Loader::getInstance&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Loader::autoload</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

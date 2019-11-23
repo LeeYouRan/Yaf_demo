@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Loader::getInstance</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.class.loader.html" title="11.3. The Yaf_Loader class">
+  <link rel="prev" href="yaf.class.loader.html" title="11.3. The Yaf_Loader class">
+  <link rel="next" href="yaf.class.loader.import.html" title="Yaf_Loader::import">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Loader::getInstance</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.loader.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.3. The Yaf_Loader class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.loader.import.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.import.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Loader::getInstance">
+    <a name="yaf.class.loader.getInstance" id="yaf.class.loader.getInstance"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>名称</h2>
+
+      <p>Yaf_Loader::getInstance</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N211B5" class="indexterm" id="N211B5"></a>
+
+    <div class="refsect1">
+      <a name="N211BE" id="N211BE"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="modifier">static&nbsp;</span><span class=
+      "type">Yaf_Loader&nbsp;</span><span class="methodname">Yaf_Loader::getInstance</span>( <span class=
+      "methodparam"><span class="type">string&nbsp;</span> <span class="parameter">$local_library_directory</span>
+      <span class="initializer">=&nbsp;NULL</span></span> ,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="methodparam"><span class="type">string&nbsp;</span> <span class=
+      "parameter">$global_library_directory</span> <span class="initializer">=&nbsp;NULL</span></span> );</code>
+
+      <p>获取当前的Yaf_Loader实例</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N211EC" id="N211EC"></a> 参数
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><em class="parameter"><code>$local_library_directory</code></em></span></dt>
+
+          <dd>
+            <p>本地(自身)类库目录, 如果留空, 则返回已经实例化过的Yaf_Loader实例</p>
+
+            <div class="caution" title="小心" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Caution">
+                <tr>
+                  <td valign="top" align="center" rowspan="2" width="25"><img alt="[小心]" src="caution.gif" tppabs="http://www.laruence.com/manual/images/caution.gif"></td>
+
+                  <th align="left">小心</th>
+                </tr>
+
+                <tr>
+                  <td valign="top" align="left">Yaf_Loader是单例模式, 所以即使第二次以不同的参数实例化一个Yaf_Loader, 得到的仍然是已经实例化的第一个实例.</td>
+                </tr>
+              </table>
+            </div>
+          </dd>
+
+          <dt><span class="term"><em class="parameter"><code>$global_library_directory</code></em></span></dt>
+
+          <dd>
+            <p>全局类库目录, 如果留空则会认为和$local_library_directory相同.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N21217" id="N21217"></a> 返回值
+
+      <p>Yaf_Loader</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2121E" id="N2121E"></a> 例子
+
+      <div class="example">
+        <a name="N21223" id="N21223"></a>
+
+        <p class="title"><b>例 11.11. <code class="function">Yaf_Loader::getInstance</code> 的例子</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     $loader = Yaf_Loader::getInstance();
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.loader.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.loader.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.loader.import.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.import.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">11.3. The Yaf_Loader class&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Loader::import</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

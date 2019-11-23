@@ -1,0 +1,722 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+  <link rel="next" href="preface.html" title="å‰è¨€">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3"><acronym class="acronym">Yaf</acronym>(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ</th>
+      </tr>
+
+      <tr>
+		  <td align="left" width="20%">
+		</td>
+
+        <th align="center" width="60%">&nbsp;</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="preface.html" tppabs="http://www.laruence.com/manual/preface.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="book" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h1 class="title"><a name="N2000B" id="N2000B"></a><acronym class="acronym">Yaf</acronym>(Yet Another
+          Framework)ç”¨æˆ·æ‰‹å†Œ</h1>
+        </div>
+
+        <div>
+          <div class="authorgroup">
+            <div class="author">
+              <h3 class="author">æƒ æ–°å®¸</h3><code class="email">&lt;<a class="email">laruence at php.net</a>&gt;</code>
+            </div>
+
+            <div class="othercredit">
+              <h3 class="othercredit"></h3>
+
+              <div class="affiliation">
+                <span class="orgname"><a class="ulink" href="javascript:if(confirm('http://yaf.laruence.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://yaf.laruence.com/'" tppabs="http://yaf.laruence.com/" target="_top">Yafå®˜æ–¹ç½‘ç«™</a>
+                <a class="ulink" href="javascript:if(confirm('http://www.php.net/manual/en/book.yaf.php  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.php.net/manual/en/book.yaf.php'" tppabs="http://www.php.net/manual/en/book.yaf.php" target="_top">æœ€æ–°æ–‡æ¡£</a> <a class=
+                "ulink" href="javascript:if(confirm('http://www.php.net/manual/zh/book.yaf.php  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.php.net/manual/zh/book.yaf.php'" tppabs="http://www.php.net/manual/zh/book.yaf.php" target="_top">æœ€æ–°ä¸­æ–‡æ–‡æ¡£</a> <a class="ulink" href=
+                "javascript:if(confirm('http://pecl.php.net/bugs/search.php?cmd=display&status=Open&package_name[]=yaf  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://pecl.php.net/bugs/search.php?cmd=display&status=Open&package_name[]=yaf'" tppabs="http://pecl.php.net/bugs/search.php?cmd=display&status=Open&package_name[]=yaf" target=
+                "_top">æŠ¥å‘ŠBug</a> 
+                <!--        <a class="ulink" href="http://yaf.laruence.com/manual/yaf_manual.chm" target="_top">ç¦»çº¿æ–‡æ¡£ä¸‹è½½</a>
+-->
+                 <a class="ulink" href="javascript:if(confirm('http://pecl.php.net/package/Yaf/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://pecl.php.net/package/Yaf/'" tppabs="http://pecl.php.net/package/Yaf/" target="_top">Pecl</a> <a class="ulink" href=
+                "javascript:if(confirm('https://github.com/laruence/php-yaf  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/laruence/php-yaf'" tppabs="https://github.com/laruence/php-yaf" target="_top">Github</a><br></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="mediaobject" align="center">
+            <table cellpadding="0" cellspacing="0" summary="manufactured viewport for HTML img" border="0" width="300">
+              <tr>
+                <td align="center"><img src="ap.jpg" tppabs="http://www.laruence.com/manual/images/ap.jpg" align="middle" width="300"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <div class="legalnotice" title="æ³•å¾‹é€šå‘Š">
+            <a name="copyright" id="copyright"></a>
+          </div>
+        </div>
+
+        <div>
+          &nbsp;
+        </div>
+
+        <div>
+          &nbsp;
+        </div>
+
+        <div>
+          <p class="pubdate">æœ€åæ›´æ–°: $Id: userguide.xml 4322 2012-09-08 01:02:33Z laruence $</p>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <div class="toc">
+      <p><b>ç›®å½•</b></p>
+
+      <dl>
+        <dt><span class="preface"><a href="preface.html" tppabs="http://www.laruence.com/manual/preface.html">å‰è¨€</a></span></dt>
+
+        <dt><span class="chapter"><a href="yaf.infos.html" tppabs="http://www.laruence.com/manual/yaf.infos.html">1. å…³äºYaf</a></span></dt>
+
+        <dd>
+          <dl>
+            <dt><span class="section"><a href="yaf.infos.html#yaf.differences" tppabs="http://www.laruence.com/manual/yaf.infos.html#yaf.differences">1.1. Yafçš„ç‰¹ç‚¹</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.advantages.html" tppabs="http://www.laruence.com/manual/yaf.advantages.html">1.2. Yafçš„ä¼˜ç‚¹</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.sequence.html" tppabs="http://www.laruence.com/manual/yaf.sequence.html">1.3. æµç¨‹å›¾</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.bench.html" tppabs="http://www.laruence.com/manual/yaf.bench.html">1.4. Yafçš„æ€§èƒ½</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="section"><a href="yaf.bench.html#yaf.bench.bref" tppabs="http://www.laruence.com/manual/yaf.bench.html#yaf.bench.bref">å¯¹æ¯”</a></span></dt>
+
+                <dt><span class="section"><a href="yaf.bench.html#N20171" tppabs="http://www.laruence.com/manual/yaf.bench.html#N20171">æµ‹è¯•ç»“æœ</a></span></dt>
+
+                <dd>
+                  <dl>
+                    <dt><span class="section"><a href="yaf.bench.html#N20176" tppabs="http://www.laruence.com/manual/yaf.bench.html#N20176">1ä¸ªå¹¶å‘</a></span></dt>
+
+                    <dt><span class="section"><a href="yaf.bench.html#N20190" tppabs="http://www.laruence.com/manual/yaf.bench.html#N20190">100ä¸ªå¹¶å‘</a></span></dt>
+
+                    <dt><span class="section"><a href="yaf.bench.html#N201AA" tppabs="http://www.laruence.com/manual/yaf.bench.html#N201AA">è¯´æ˜</a></span></dt>
+                  </dl>
+                </dd>
+              </dl>
+            </dd>
+          </dl>
+        </dd>
+
+        <dt><span class="chapter"><a href="yaf.install.html" tppabs="http://www.laruence.com/manual/yaf.install.html">2. Yafå®‰è£…/é…ç½®</a></span></dt>
+
+        <dd>
+          <dl>
+            <dt><span class="section"><a href="yaf.install.html#yaf.configure" tppabs="http://www.laruence.com/manual/yaf.install.html#yaf.configure">2.1. Yafçš„å®‰è£…</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="section"><a href="yaf.install.html#yaf.installation.linux" tppabs="http://www.laruence.com/manual/yaf.install.html#yaf.installation.linux">åœ¨ Linux
+                ç³»ç»Ÿä¸‹å®‰è£…</a></span></dt>
+
+                <dd>
+                  <dl>
+                    <dt><span class="section"><a href="yaf.install.html#N201DE" tppabs="http://www.laruence.com/manual/yaf.install.html#N201DE">PHP 5.2+</a></span></dt>
+                  </dl>
+                </dd>
+
+                <dt><span class="section"><a href="yaf.install.html#yaf.installation.windows" tppabs="http://www.laruence.com/manual/yaf.install.html#yaf.installation.windows">åœ¨ Windows
+                ç³»ç»Ÿä¸‹å®‰è£…</a></span></dt>
+
+                <dd>
+                  <dl>
+                    <dt><span class="section"><a href="yaf.install.html#N2022C" tppabs="http://www.laruence.com/manual/yaf.install.html#N2022C">PHP 5.2+</a></span></dt>
+                  </dl>
+                </dd>
+              </dl>
+            </dd>
+
+            <dt><span class="section"><a href="yaf.constant.html" tppabs="http://www.laruence.com/manual/yaf.constant.html">2.2. Yafå®šä¹‰çš„å¸¸é‡</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.ini.html" tppabs="http://www.laruence.com/manual/yaf.ini.html">2.3. Yafçš„é…ç½®é¡¹</a></span></dt>
+          </dl>
+        </dd>
+
+        <dt><span class="chapter"><a href="yaf.tutorial.html" tppabs="http://www.laruence.com/manual/yaf.tutorial.html">3. å¿«é€Ÿå¼€å§‹</a></span></dt>
+
+        <dd>
+          <dl>
+            <dt><span class="sect1"><a href="yaf.tutorial.html#tutorial.requirements" tppabs="http://www.laruence.com/manual/yaf.tutorial.html#tutorial.requirements">3.1. éœ€è¦äº›ä»€ä¹ˆï¼Ÿ</a></span></dt>
+
+            <dt><span class="sect1"><a href="tutorial.firstpage.html" tppabs="http://www.laruence.com/manual/tutorial.firstpage.html">3.2. Hello World</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="sect2"><a href="tutorial.firstpage.html#tutorial.directory" tppabs="http://www.laruence.com/manual/tutorial.firstpage.html#tutorial.directory">ç›®å½•ç»“æ„</a></span></dt>
+
+                <dt><span class="sect2"><a href="tutorial.firstpage.html#tutorial.bootstrap" tppabs="http://www.laruence.com/manual/tutorial.firstpage.html#tutorial.bootstrap">å…¥å£æ–‡ä»¶</a></span></dt>
+
+                <dt><span class="sect2"><a href="tutorial.firstpage.html#tutorial.rewrite" tppabs="http://www.laruence.com/manual/tutorial.firstpage.html#tutorial.rewrite">é‡å†™è§„åˆ™</a></span></dt>
+
+                <dt><span class="sect2"><a href="tutorial.firstpage.html#tutorial.config" tppabs="http://www.laruence.com/manual/tutorial.firstpage.html#tutorial.config">é…ç½®æ–‡ä»¶</a></span></dt>
+
+                <dt><span class="sect2"><a href="tutorial.firstpage.html#tutorial.controller" tppabs="http://www.laruence.com/manual/tutorial.firstpage.html#tutorial.controller">æ§åˆ¶å™¨</a></span></dt>
+
+                <dt><span class="sect2"><a href="tutorial.firstpage.html#tutorial.view" tppabs="http://www.laruence.com/manual/tutorial.firstpage.html#tutorial.view">è§†å›¾æ–‡ä»¶</a></span></dt>
+
+                <dt><span class="sect2"><a href="tutorial.firstpage.html#tutorial.run" tppabs="http://www.laruence.com/manual/tutorial.firstpage.html#tutorial.run">è¿è¡Œ</a></span></dt>
+              </dl>
+            </dd>
+
+            <dt><span class="sect1"><a href="tutorial.last.html" tppabs="http://www.laruence.com/manual/tutorial.last.html">3.3. ä½¿ç”¨ä»£ç ç”Ÿæˆå·¥å…·</a></span></dt>
+          </dl>
+        </dd>
+
+        <dt><span class="chapter"><a href="yaf.config.html" tppabs="http://www.laruence.com/manual/yaf.config.html">4. é…ç½®æ–‡ä»¶</a></span></dt>
+
+        <dd>
+          <dl>
+            <dt><span class="sect1"><a href="yaf.config.html#yaf.config.bref" tppabs="http://www.laruence.com/manual/yaf.config.html#yaf.config.bref">4.1. å¿…è¦çš„é…ç½®é¡¹</a></span></dt>
+
+            <dt><span class="sect1"><a href="yaf.config.optional.html" tppabs="http://www.laruence.com/manual/yaf.config.optional.html">4.2. å¯é€‰çš„é…ç½®é¡¹</a></span></dt>
+          </dl>
+        </dd>
+
+        <dt><span class="chapter"><a href="yaf.autoloader.html" tppabs="http://www.laruence.com/manual/yaf.autoloader.html">5. è‡ªåŠ¨åŠ è½½å™¨</a></span></dt>
+
+        <dd>
+          <dl>
+            <dt><span class="sect1"><a href="yaf.autoloader.html#yaf.autoloader.library" tppabs="http://www.laruence.com/manual/yaf.autoloader.html#yaf.autoloader.library">5.1.
+            å…¨å±€ç±»å’Œè‡ªèº«ç±»(æœ¬åœ°ç±»)</a></span></dt>
+
+            <dt><span class="sect1"><a href="yaf.autoloader.rule.html" tppabs="http://www.laruence.com/manual/yaf.autoloader.rule.html">5.2. ç±»çš„åŠ è½½è§„åˆ™</a></span></dt>
+          </dl>
+        </dd>
+
+        <dt><span class="chapter"><a href="yaf.bootstrap.html" tppabs="http://www.laruence.com/manual/yaf.bootstrap.html">6. ä½¿ç”¨Bootstrap</a></span></dt>
+
+        <dd>
+          <dl>
+            <dt><span class="section"><a href="yaf.bootstrap.html#yaf.bootstrap.intro" tppabs="http://www.laruence.com/manual/yaf.bootstrap.html#yaf.bootstrap.intro">6.1. ç®€ä»‹</a></span></dt>
+
+            <dt><span class="section"><a href="ch06s02.html" tppabs="http://www.laruence.com/manual/ch06s02.html">6.2. ä½¿ç”¨Bootstrap</a></span></dt>
+          </dl>
+        </dd>
+
+        <dt><span class="chapter"><a href="yaf.plugin.html" tppabs="http://www.laruence.com/manual/yaf.plugin.html">7. ä½¿ç”¨æ’ä»¶</a></span></dt>
+
+        <dd>
+          <dl>
+            <dt><span class="section"><a href="yaf.plugin.html#yaf.plugin.intro" tppabs="http://www.laruence.com/manual/yaf.plugin.html#yaf.plugin.intro">7.1. ç®€ä»‹</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.plugin.times.html" tppabs="http://www.laruence.com/manual/yaf.plugin.times.html">7.2. Yafæ”¯æŒçš„Hook</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.plugin.define.html" tppabs="http://www.laruence.com/manual/yaf.plugin.define.html">7.3. å®šä¹‰æ’ä»¶</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.plugin.register.html" tppabs="http://www.laruence.com/manual/yaf.plugin.register.html">7.4. æ³¨å†Œæ’ä»¶</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.plugin.layout.html" tppabs="http://www.laruence.com/manual/yaf.plugin.layout.html">7.5. æ’ä»¶ç›®å½•</a></span></dt>
+          </dl>
+        </dd>
+
+        <dt><span class="chapter"><a href="yaf.routes.html" tppabs="http://www.laruence.com/manual/yaf.routes.html">8. è·¯ç”±å’Œè·¯ç”±åè®®</a></span></dt>
+
+        <dd>
+          <dl>
+            <dt><span class="sect1"><a href="yaf.routes.html#yaf.routes.intro" tppabs="http://www.laruence.com/manual/yaf.routes.html#yaf.routes.intro">8.1. æ¦‚è¿°</a></span></dt>
+
+            <dt><span class="sect1"><a href="yaf.routes.design.html" tppabs="http://www.laruence.com/manual/yaf.routes.design.html">8.2. è®¾è®¡</a></span></dt>
+
+            <dt><span class="sect1"><a href="yaf.routes.default.html" tppabs="http://www.laruence.com/manual/yaf.routes.default.html">8.3. é»˜è®¤æƒ…å†µ</a></span></dt>
+
+            <dt><span class="sect1"><a href="yaf.routes.usage.html" tppabs="http://www.laruence.com/manual/yaf.routes.usage.html">8.4. ä½¿ç”¨è·¯ç”±</a></span></dt>
+
+            <dt><span class="sect1"><a href="yaf.routes.static.html" tppabs="http://www.laruence.com/manual/yaf.routes.static.html">8.5. è·¯ç”±åè®®è¯¦è§£</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="sect2"><a href="yaf.routes.static.html#N20845" tppabs="http://www.laruence.com/manual/yaf.routes.static.html#N20845">é»˜è®¤è·¯ç”±åè®®</a></span></dt>
+
+                <dt><span class="sect2"><a href=
+                "yaf.routes.static.html#yaf.routes.simple" tppabs="http://www.laruence.com/manual/yaf.routes.static.html#yaf.routes.simple">Yaf_Route_Simple</a></span></dt>
+
+                <dt><span class="sect2"><a href=
+                "yaf.routes.static.html#yaf.routes.supervar" tppabs="http://www.laruence.com/manual/yaf.routes.static.html#yaf.routes.supervar">Yaf_Route_Supervar</a></span></dt>
+
+                <dt><span class="sect2"><a href="yaf.routes.static.html#yaf.routes.map" tppabs="http://www.laruence.com/manual/yaf.routes.static.html#yaf.routes.map">Yaf_Route_Map</a></span></dt>
+
+                <dt><span class="sect2"><a href=
+                "yaf.routes.static.html#yaf.routes.rewrite" tppabs="http://www.laruence.com/manual/yaf.routes.static.html#yaf.routes.rewrite">Yaf_Route_Rewrite</a></span></dt>
+
+                <dt><span class="sect2"><a href=
+                "yaf.routes.static.html#yaf.routes.regex" tppabs="http://www.laruence.com/manual/yaf.routes.static.html#yaf.routes.regex">Yaf_Route_Regex</a></span></dt>
+              </dl>
+            </dd>
+
+            <dt><span class="sect1"><a href="yaf.routes.custom.html" tppabs="http://www.laruence.com/manual/yaf.routes.custom.html">8.6. è‡ªå®šä¹‰è·¯ç”±åè®®</a></span></dt>
+          </dl>
+        </dd>
+
+        <dt><span class="chapter"><a href="yaf.incli.html" tppabs="http://www.laruence.com/manual/yaf.incli.html">9. åœ¨å‘½ä»¤è¡Œä½¿ç”¨Yaf</a></span></dt>
+
+        <dd>
+          <dl>
+            <dt><span class="section"><a href="yaf.incli.html#yaf.incli.intro" tppabs="http://www.laruence.com/manual/yaf.incli.html#yaf.incli.intro">9.1. ç®€ä»‹</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.incli.times.html" tppabs="http://www.laruence.com/manual/yaf.incli.times.html">9.2. ä½¿ç”¨æ ·ä¾‹</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.incli.layout.html" tppabs="http://www.laruence.com/manual/yaf.incli.layout.html">9.3. åˆ†å‘è¯·æ±‚</a></span></dt>
+          </dl>
+        </dd>
+
+        <dt><span class="chapter"><a href="yaf.catcherror.html" tppabs="http://www.laruence.com/manual/yaf.catcherror.html">10. å¼‚å¸¸å’Œé”™è¯¯</a></span></dt>
+
+        <dd>
+          <dl>
+            <dt><span class="sect1"><a href="yaf.catcherror.html#yaf.catcherror.intro" tppabs="http://www.laruence.com/manual/yaf.catcherror.html#yaf.catcherror.intro">10.1. æ¦‚è¿°</a></span></dt>
+
+            <dt><span class="sect1"><a href="yaf.catcherror.exception.html" tppabs="http://www.laruence.com/manual/yaf.catcherror.exception.html">10.2. å¼‚å¸¸æ¨¡å¼</a></span></dt>
+
+            <dt><span class="sect1"><a href="yaf.catcherror.error.html" tppabs="http://www.laruence.com/manual/yaf.catcherror.error.html">10.3. é”™è¯¯æ¨¡å¼</a></span></dt>
+          </dl>
+        </dd>
+
+        <dt><span class="chapter"><a href="yaf.classes.html" tppabs="http://www.laruence.com/manual/yaf.classes.html">11. å†…å»ºçš„ç±»</a></span></dt>
+
+        <dd>
+          <dl>
+            <dt><span class="section"><a href="yaf.classes.html#yaf.class.application" tppabs="http://www.laruence.com/manual/yaf.classes.html#yaf.class.application">11.1.
+            Yaf_Application</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.application.construct.html" tppabs="http://www.laruence.com/manual/yaf.class.application.construct.html">Yaf_Application::__construct</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.application.bootstrap.html" tppabs="http://www.laruence.com/manual/yaf.class.application.bootstrap.html">Yaf_Application::bootstrap</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.application.app.html" tppabs="http://www.laruence.com/manual/yaf.class.application.app.html">Yaf_Application::app</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.application.environ.html" tppabs="http://www.laruence.com/manual/yaf.class.application.environ.html">Yaf_Application::environ</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.application.run.html" tppabs="http://www.laruence.com/manual/yaf.class.application.run.html">Yaf_Application::run</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.application.execute.html" tppabs="http://www.laruence.com/manual/yaf.class.application.execute.html">Yaf_Application::execute</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.application.getDispatcher.html" tppabs="http://www.laruence.com/manual/yaf.class.application.getDispatcher.html">Yaf_Application::getDispatcher</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.application.getConfig.html" tppabs="http://www.laruence.com/manual/yaf.class.application.getConfig.html">Yaf_Application::getConfig</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.application.getModules.html" tppabs="http://www.laruence.com/manual/yaf.class.application.getModules.html">Yaf_Application::getModules</a></span></dt>
+              </dl>
+            </dd>
+
+            <dt><span class="section"><a href="yaf.class.bootstrap.html" tppabs="http://www.laruence.com/manual/yaf.class.bootstrap.html">11.2. Yaf_Bootstrap_Abstract</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.class.loader.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.html">11.3. Yaf_Loader</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.loader.getInstance.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.getInstance.html">Yaf_Loader::getInstance</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.loader.import.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.import.html">Yaf_Loader::import</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.loader.autoload.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.autoload.html">Yaf_Loader::autoload</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.loader.registerLocalNamespace.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.registerLocalNamespace.html">Yaf_Loader::registerLocalNamespace</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.loader.isLocalName.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.isLocalName.html">Yaf_Loader::isLocalName</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.loader.getLocalNamespace.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.getLocalNamespace.html">Yaf_Loader::getLocalNamespace</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.loader.clearLocalNamespace.html" tppabs="http://www.laruence.com/manual/yaf.class.loader.clearLocalNamespace.html">Yaf_Loader::clearLocalNamespace</a></span></dt>
+              </dl>
+            </dd>
+
+            <dt><span class="section"><a href="yaf.class.dispatcher.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.html">11.4. Yaf_Dispatcher</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.getInstance.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.getInstance.html">Yaf_Dispatcher::getInstance</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.disableView.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.disableView.html">Yaf_Dispatcher::disableView</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.enableView.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.enableView.html">Yaf_Dispatcher::enableView</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.autoRender.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.autoRender.html">Yaf_Dispatcher::autoRender</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.returnResponse.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.returnResponse.html">Yaf_Dispatcher::returnResponse</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.flushInstantly.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.flushInstantly.html">Yaf_Dispatcher::flushInstantly</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.setErrorHandler.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setErrorHandler.html">Yaf_Dispatcher::setErrorHandler</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.getApplication.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.getApplication.html">Yaf_Dispatcher::getApplication</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.getRouter.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.getRouter.html">Yaf_Dispatcher::getRouter</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.getRequest.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.getRequest.html">Yaf_Dispatcher::getRequest</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.registerPlugin.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.registerPlugin.html">Yaf_Dispatcher::registerPlugin</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.setAppDirectory.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setAppDirectory.html">Yaf_Dispatcher::setAppDirectory</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.setRequest.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setRequest.html">Yaf_Dispatcher::setRequest</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.initView.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.initView.html">Yaf_Dispatcher::initView</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.setView.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setView.html">Yaf_Dispatcher::setView</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.setDefaultController.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setDefaultController.html">Yaf_Dispatcher::setDefaultController</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.setDefaultModule.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setDefaultModule.html">Yaf_Dispatcher::setDefaultModule</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.setDefaultAction.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.setDefaultAction.html">Yaf_Dispatcher::setDefaultAction</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.throwException.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.throwException.html">Yaf_Dispatcher::throwException</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.catchException.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.catchException.html">Yaf_Dispatcher::catchException</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.dispatcher.dispatch.html" tppabs="http://www.laruence.com/manual/yaf.class.dispatcher.dispatch.html">Yaf_Dispatcher::dispatch</a></span></dt>
+              </dl>
+            </dd>
+
+            <dt><span class="section"><a href="yaf.class.plugin.html" tppabs="http://www.laruence.com/manual/yaf.class.plugin.html">11.5. Yaf_Plugin_Abstract</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.class.registry.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.html">11.6. Yaf_Registry</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="refentrytitle"><a href="yaf.class.registry.set.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.set.html">Yaf_Registry::set</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href="yaf.class.registry.get.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.get.html">Yaf_Registry::get</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href="yaf.class.registry.has.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.has.html">Yaf_Registry::has</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href="yaf.class.registry.del.html" tppabs="http://www.laruence.com/manual/yaf.class.registry.del.html">Yaf_Registry::del</a></span></dt>
+              </dl>
+            </dd>
+
+            <dt><span class="section"><a href="yaf.class.session.html" tppabs="http://www.laruence.com/manual/yaf.class.session.html">11.7. Yaf_Session</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.class.config.html" tppabs="http://www.laruence.com/manual/yaf.class.config.html">11.8. Yaf_Config_Abstract</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="section"><a href=
+                "yaf.class.config.html#yaf.class.config.ini" tppabs="http://www.laruence.com/manual/yaf.class.config.html#yaf.class.config.ini">Yaf_Config_Ini</a></span></dt>
+
+                <dt><span class="section"><a href=
+                "yaf.class.config.html#yaf.class.config.simple" tppabs="http://www.laruence.com/manual/yaf.class.config.html#yaf.class.config.simple">Yaf_Config_Simple</a></span></dt>
+              </dl>
+            </dd>
+
+            <dt><span class="section"><a href="yaf.class.controller.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.html">11.9. Yaf_Controller_Abstract</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.controller.getModuleName.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getModuleName.html">Yaf_Controller_Abstract::getModuleName</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.controller.getRequest.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getRequest.html">Yaf_Controller_Abstract::getRequest</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.controller.getResponse.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getResponse.html">Yaf_Controller_Abstract::getResponse</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.controller.getView.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getView.html">Yaf_Controller_Abstract::getView</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.controller.initView.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.initView.html">Yaf_Controller_Abstract::initView</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.controller.setViewPath.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.setViewPath.html">Yaf_Controller_Abstract::setViewPath</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.controller.getViewPath.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.getViewPath.html">Yaf_Controller_Abstract::getViewPath</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.controller.render.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.render.html">Yaf_Controller_Abstract::render</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.controller.display.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.display.html">Yaf_Controller_Abstract::display</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.controller.forward.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.forward.html">Yaf_Controller_Abstract::forward</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.controller.redirect.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.redirect.html">Yaf_Controller_Abstract::redirect</a></span></dt>
+              </dl>
+            </dd>
+
+            <dt><span class="section"><a href="yaf.class.action.html" tppabs="http://www.laruence.com/manual/yaf.class.action.html">11.10. Yaf_Action_Abstract</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.class.view.html" tppabs="http://www.laruence.com/manual/yaf.class.view.html">11.11. Yaf_View_Interface</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="section"><a href=
+                "yaf.class.view.html#yaf.class.view.simple" tppabs="http://www.laruence.com/manual/yaf.class.view.html#yaf.class.view.simple">Yaf_View_Simple</a></span></dt>
+
+                <dd>
+                  <dl>
+                    <dt><span class="refentrytitle"><a href=
+                    "yaf.class.view.simple.assign.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.assign.html">Yaf_View_Simple::assign</a></span></dt>
+
+                    <dt><span class="refentrytitle"><a href=
+                    "yaf.class.view.simple.render.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.render.html">Yaf_View_Simple::render</a></span></dt>
+
+                    <dt><span class="refentrytitle"><a href=
+                    "yaf.class.view.simple.display.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.display.html">Yaf_View_Simple::display</a></span></dt>
+
+                    <dt><span class="refentrytitle"><a href=
+                    "yaf.class.view.simple.setScriptPath.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.setScriptPath.html">Yaf_View_Simple::setScriptPath</a></span></dt>
+
+                    <dt><span class="refentrytitle"><a href=
+                    "yaf.class.view.simple.getScriptPath.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.getScriptPath.html">Yaf_View_Simple::getScriptPath</a></span></dt>
+
+                    <dt><span class="refentrytitle"><a href=
+                    "yaf.class.view.simple.__set.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.__set.html">Yaf_View_Simple::__set</a></span></dt>
+
+                    <dt><span class="refentrytitle"><a href=
+                    "yaf.class.view.simple.__get.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.__get.html">Yaf_View_Simple::__get</a></span></dt>
+
+                    <dt><span class="refentrytitle"><a href=
+                    "yaf.class.view.simple.get.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.get.html">Yaf_View_Simple::get</a></span></dt>
+                  </dl>
+                </dd>
+              </dl>
+            </dd>
+
+            <dt><span class="section"><a href="yaf.class.request.html" tppabs="http://www.laruence.com/manual/yaf.class.request.html">11.12. Yaf_Request_Abstract</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="section"><a href=
+                "yaf.class.request.html#yaf.class.request.http" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.http">Yaf_Request_Http</a></span></dt>
+
+                <dt><span class="section"><a href=
+                "yaf.class.request.html#yaf.class.request.simple" tppabs="http://www.laruence.com/manual/yaf.class.request.html#yaf.class.request.simple">Yaf_Request_Simple</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.request.getException.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getException.html">Yaf_Request_Abstract::getException</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.request.getModuleName.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getModuleName.html">Yaf_Request_Abstract::getModuleName</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.request.getControllerName.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getControllerName.html">Yaf_Request_Abstract::getControllerName</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.request.getActionName.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getActionName.html">Yaf_Request_Abstract::getActionName</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.request.getParams.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getParams.html">Yaf_Request_Abstract::getParams</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.request.getParam.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getParam.html">Yaf_Request_Abstract::getParam</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.request.setParam.html" tppabs="http://www.laruence.com/manual/yaf.class.request.setParam.html">Yaf_Request_Abstract::setParam</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.request.getMethod.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getMethod.html">Yaf_Request_Abstract::getMethod</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.request.isCli.html" tppabs="http://www.laruence.com/manual/yaf.class.request.isCli.html">Yaf_Request_Abstract::isCli</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.request.isGet.html" tppabs="http://www.laruence.com/manual/yaf.class.request.isGet.html">Yaf_Request_Abstract::isGet</a></span></dt>
+              </dl>
+            </dd>
+
+            <dt><span class="section"><a href="yaf.class.response.html" tppabs="http://www.laruence.com/manual/yaf.class.response.html">11.13. Yaf_Response_Abstract</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="section"><a href=
+                "yaf.class.response.html#yaf.class.response.http" tppabs="http://www.laruence.com/manual/yaf.class.response.html#yaf.class.response.http">Yaf_Response_Http</a></span></dt>
+
+                <dt><span class="section"><a href=
+                "yaf.class.response.html#yaf.class.response.cli" tppabs="http://www.laruence.com/manual/yaf.class.response.html#yaf.class.response.cli">Yaf_Response_Cli</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.response.setBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.setBody.html">Yaf_Response_Abstract::setBody</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.response.appendBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.appendBody.html">Yaf_Response_Abstract::appendBody</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.response.prependBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.prependBody.html">Yaf_Response_Abstract::prependBody</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.response.getBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.getBody.html">Yaf_Response_Abstract::getBody</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.response.clearBody.html" tppabs="http://www.laruence.com/manual/yaf.class.response.clearBody.html">Yaf_Response_Abstract::clearBody</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.response.response.html" tppabs="http://www.laruence.com/manual/yaf.class.response.response.html">Yaf_Response_Abstract::response</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.response.setRedirect.html" tppabs="http://www.laruence.com/manual/yaf.class.response.setRedirect.html">Yaf_Response_Abstract::setRedirect</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.__toString.__toString.html" tppabs="http://www.laruence.com/manual/yaf.class.__toString.__toString.html">Yaf_Response_Abstract::__toString</a></span></dt>
+              </dl>
+            </dd>
+
+            <dt><span class="section"><a href="yaf.class.router.html" tppabs="http://www.laruence.com/manual/yaf.class.router.html">11.14. Yaf_Router</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.router.addRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.addRoute.html">Yaf_Router::addRoute</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.router.addConfig.html" tppabs="http://www.laruence.com/manual/yaf.class.router.addConfig.html">Yaf_Config::addConfig</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.router.getRoutes.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getRoutes.html">Yaf_Router::getRoutes</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.router.getRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getRoute.html">Yaf_Router::getRoute</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.router.getCurrentRoute.html" tppabs="http://www.laruence.com/manual/yaf.class.router.getCurrentRoute.html">Yaf_Router::getCurrentRoute</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href=
+                "yaf.class.router.isModuleName.html" tppabs="http://www.laruence.com/manual/yaf.class.router.isModuleName.html">Yaf_Router::isModuleName</a></span></dt>
+
+                <dt><span class="refentrytitle"><a href="yaf.class.router.route.html" tppabs="http://www.laruence.com/manual/yaf.class.router.route.html">Yaf_Router::route</a></span></dt>
+              </dl>
+            </dd>
+
+            <dt><span class="section"><a href="yaf.class.route.html" tppabs="http://www.laruence.com/manual/yaf.class.route.html">11.15. Yaf_Route_Interface</a></span></dt>
+
+            <dt><span class="section"><a href="yaf.class.exception.html" tppabs="http://www.laruence.com/manual/yaf.class.exception.html">11.16. Yaf_Exception</a></span></dt>
+
+            <dd>
+              <dl>
+                <dt><span class="section"><a href=
+                "yaf.class.exception.html#yaf.class.exception.startuperror" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.startuperror">Yaf_Exception_StartupError</a></span></dt>
+
+                <dt><span class="section"><a href=
+                "yaf.class.exception.html#yaf.class.exception.routerfailed" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.routerfailed">Yaf_Exception_RouterFailed</a></span></dt>
+
+                <dt><span class="section"><a href=
+                "yaf.class.exception.html#yaf.class.exception.dispatchfailed" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.dispatchfailed">Yaf_Exception_DispatchFailed</a></span></dt>
+
+                <dt><span class="section"><a href=
+                "yaf.class.exception.html#yaf.class.exception.loadfailed" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.loadfailed">Yaf_Exception_LoadFailed</a></span></dt>
+
+                <dt><span class="section"><a href=
+                "yaf.class.exception.html#yaf.class.exception.loadfailed.module" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.loadfailed.module">Yaf_Exception_LoadFailed_Module</a></span></dt>
+
+                <dt><span class="section"><a href=
+                "yaf.class.exception.html#yaf.class.exception.loadfailed.controller" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.loadfailed.controller">Yaf_Exception_LoadFailed_Controller</a></span></dt>
+
+                <dt><span class="section"><a href=
+                "yaf.class.exception.html#yaf.class.exception.loadfailed.action" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.loadfailed.action">Yaf_Exception_LoadFailed_Action</a></span></dt>
+
+                <dt><span class="section"><a href=
+                "yaf.class.exception.html#yaf.class.exception.loadfailed.view" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.loadfailed.view">Yaf_Exception_LoadFailed_View</a></span></dt>
+
+                <dt><span class="section"><a href=
+                "yaf.class.exception.html#yaf.class.exception.typeerror" tppabs="http://www.laruence.com/manual/yaf.class.exception.html#yaf.class.exception.typeerror">Yaf_Exception_TypeError</a></span></dt>
+              </dl>
+            </dd>
+          </dl>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%">&nbsp;</td>
+
+        <td align="center" width="20%">&nbsp;</td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="preface.html" tppabs="http://www.laruence.com/manual/preface.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">&nbsp;</td>
+
+        <td align="center" width="20%">&nbsp;</td>
+
+        <td valign="top" align="right" width="40%">&nbsp;å‰è¨€</td>
+      </tr>
+    </table>
+  </div><script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js">
+</script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src=
+"tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"></a></noscript>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

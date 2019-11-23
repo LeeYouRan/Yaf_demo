@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>11.10. The Yaf_Action_Abstract class</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.classes.html" title="第 11 章 内建的类">
+  <link rel="prev" href="yaf.class.controller.redirect.html" title="Yaf_Controller_Abstract::redirect">
+  <link rel="next" href="yaf.class.view.html" title="11.11. The Yaf_View_Interface class">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">11.10. The Yaf_Action_Abstract class</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.controller.redirect.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.redirect.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">第 11 章 内建的类</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.view.html" tppabs="http://www.laruence.com/manual/yaf.class.view.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="section" title="11.10. The Yaf_Action_Abstract class">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both"><a name="yaf.class.action" id="yaf.class.action"></a>11.10. The
+          Yaf_Action_Abstract class</h2>
+        </div>
+      </div>
+    </div><a name="N232CA" class="indexterm" id="N232CA"></a>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>简介
+
+      <p>Yaf_Action_Abstract是MVC中C的动作, 一般而言动作都是定义在Yaf_Controller_Abstract的派生类中的, 但是有的时候, 为了使得代码清晰, 分离一些大的控制器,
+      则可以采用单独定义Yaf_Action_Abstract来实现.</p>
+
+      <p>Yaf_Action_Abstract体系具有可扩展性, 可以通过继承已有的类, 来实现这个抽象类, 从而添加应用自己的应用逻辑.</p>
+
+      <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace"></a><a class="link" href=
+      "yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下, 也可以使用 Yaf\Action_Abstract.</p>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>
+      <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier">abstract </span>
+    <span class="classname">Yaf_Action_Abstract</span>
+    extends
+    Yaf_Action_Controller
+   </span> {<br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"modifier">abstract </span><span class="type">void </span><span class="methodname"> execute </span>(<span class=
+"methodparam">
+     <span class="type">void </span>
+    </span>);</code><br>}
+</pre>
+    </div>
+
+    <div class="refsect1">
+      <a name="N2330F" id="N2330F"></a> 参见
+
+      <table summary="Simple list" border="0" class="simplelist">
+        <tr>
+          <td><a class="link" href="yaf.class.controller.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.html" title=
+          "11.9. The Yaf_Controller_Abstract class"><code class="classname">Yaf_Controller_Abstract</code></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.controller.redirect.html" tppabs="http://www.laruence.com/manual/yaf.class.controller.redirect.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.classes.html" tppabs="http://www.laruence.com/manual/yaf.classes.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.view.html" tppabs="http://www.laruence.com/manual/yaf.class.view.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Controller_Abstract::redirect&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;11.11. The Yaf_View_Interface class</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

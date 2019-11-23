@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>Yaf_Request_Abstract::isCli</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)ç”¨æˆ·æ‰‹å†Œ">
+  <link rel="up" href="yaf.class.request.html" title="11.12. The Yaf_Request_Abstract class">
+  <link rel="prev" href="yaf.class.request.getMethod.html" title="Yaf_Request_Abstract::getMethod">
+  <link rel="next" href="yaf.class.request.isGet.html" title="Yaf_Request_Abstract::isGet">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">Yaf_Request_Abstract::isCli</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.request.getMethod.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getMethod.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <th align="center" width="60%">11.12. The Yaf_Request_Abstract class</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.request.isGet.html" tppabs="http://www.laruence.com/manual/yaf.class.request.isGet.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="refentry" title="Yaf_Request_Abstract::isCli">
+    <a name="yaf.class.request.isCli" id="yaf.class.request.isCli"></a>
+
+    <div class="titlepage"></div>
+
+    <div class="refnamediv">
+      <h2>åç§°</h2>
+
+      <p>Yaf_Request_Abstract::isCli</p>
+    </div>
+
+    <p>(Since Yaf 1.0.0.5)</p><a name="N2459F" class="indexterm" id="N2459F"></a>
+
+    <div class="refsect1">
+      <a name="N245A8" id="N245A8"></a> <code class="methodsynopsis"><span class=
+      "modifier">public&nbsp;</span><span class="type">string&nbsp;</span><span class=
+      "methodname">Yaf_Request_Abstract::isCli</span>( <span class="methodparam"><span class=
+      "type">void&nbsp;</span></span> );</code>
+
+      <p>è·å–å½“å‰è¯·æ±‚æ˜¯å¦ä¸ºCLIè¯·æ±‚</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N245C1" id="N245C1"></a> å‚æ•°
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><span class="type">void</span></span></dt>
+
+          <dd>
+            <p>æœ¬æ–¹æ³•ä¸éœ€è¦å‚æ•°</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a name="N245DA" id="N245DA"></a> è¿”å›å€¼
+
+      <p>æ˜¯CLIè¯·æ±‚è¿”å›TRUE, ä¸æ˜¯è¿”å›FALSE</p>
+    </div>
+
+    <div class="refsect1">
+      <a name="N245E1" id="N245E1"></a> ä¾‹å­
+
+      <div class="example">
+        <a name="N245E6" id="N245E6"></a>
+
+        <p class="title"><b>ä¾‹ 11.73. <code class="function">Yaf_Request_Abstract::isCli</code>çš„ä¾‹å­</b></p>
+
+        <div class="example-contents">
+          <pre class="programlisting">
+     
+     &lt;?php
+     class IndexController extends Yaf_Controller_Abstract {
+        public funciton indexAction() {
+          if ($this-&gt;getRequest()-&gt;isCli()) {
+             echo "running in Cli mode";
+          }
+        }
+     }
+     ?&gt;
+     
+    
+</pre>
+        </div>
+      </div>
+
+      <p><br class="example-break"></p>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.request.getMethod.html" tppabs="http://www.laruence.com/manual/yaf.class.request.getMethod.html">ä¸Šä¸€é¡µ</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.class.request.html" tppabs="http://www.laruence.com/manual/yaf.class.request.html">ä¸Šä¸€çº§</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.request.isGet.html" tppabs="http://www.laruence.com/manual/yaf.class.request.isGet.html">ä¸‹ä¸€é¡µ</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">Yaf_Request_Abstract::getMethod&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">èµ·å§‹é¡µ</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_Request_Abstract::isGet</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>

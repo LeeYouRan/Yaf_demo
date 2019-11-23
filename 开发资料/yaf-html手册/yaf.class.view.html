@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Linux (vers 11 February 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>11.11. The Yaf_View_Interface class</title>
+  <link href="styles.css" tppabs="http://www.laruence.com/manual/css/styles.css" rel="stylesheet" type="text/css">
+  <meta content="Zoeey Doc Generator" name="generator">
+  <link rel="home" href="index.html" title="Yaf(Yet Another Framework)用户手册">
+  <link rel="up" href="yaf.classes.html" title="第 11 章 内建的类">
+  <link rel="prev" href="yaf.class.action.html" title="11.10. The Yaf_Action_Abstract class">
+  <link rel="next" href="yaf.class.view.simple.assign.html" title="Yaf_View_Simple::assign">
+</head>
+
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+  <div class="navheader">
+    <table summary="Navigation header" width="100%">
+      <tr>
+        <th align="center" colspan="3">11.11. The Yaf_View_Interface class</th>
+      </tr>
+
+      <tr>
+        <td align="left" width="20%"><a accesskey="p" href="yaf.class.action.html" tppabs="http://www.laruence.com/manual/yaf.class.action.html">上一页</a>&nbsp;</td>
+
+        <th align="center" width="60%">第 11 章 内建的类</th>
+
+        <td align="right" width="20%">&nbsp;<a accesskey="n" href="yaf.class.view.simple.assign.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.assign.html">下一页</a></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+
+  <div lang="zh_cn" class="section" title="11.11. The Yaf_View_Interface class">
+    <div class="titlepage">
+      <div>
+        <div>
+          <h2 class="title" style="clear: both"><a name="yaf.class.view" id="yaf.class.view"></a>11.11. The
+          Yaf_View_Interface class</h2>
+        </div>
+      </div>
+    </div><a name="N23328" class="indexterm" id="N23328"></a>
+
+    <div class="simplesect" title="简介">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.view.intro" id="yaf.class.view.intro"></a>简介</h3>
+          </div>
+        </div>
+      </div>
+
+      <p>Yaf_View_Interface是为了提供可扩展的, 可自定的视图引擎而设立的视图引擎接口, 它定义了用在Yaf上的视图引擎需要实现的方法和功能.</p>
+
+      <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下, 也可以使用
+      Yaf\View_Interface</p>
+    </div>
+
+    <div class="simplesect">
+      <div class="titlepage"></div>
+      <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="modifier">interface </span>
+    <span class="classname">Yaf_View_Interface</span>
+   </span> {<br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">string </span><span class="methodname">render</span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$view_path</span>
+    </span>,<br>                       <span class="methodparam">
+     <span class="type">array </span>
+     <span class="parameter">$tpl_vars</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">display</span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$view_path</span>
+    </span>,<br>                         <span class="methodparam">
+     <span class="type">array </span>
+     <span class="parameter">$tpl_vars</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">assign</span>(<span class="methodparam">
+     <span class="type">mixed </span>
+     <span class="parameter">$name</span>
+    </span>,<br>                        <span class="methodparam">
+     <span class="type">mixed </span>
+     <span class="parameter">$value</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">setScriptPath</span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$view_directory</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">string </span><span class="methodname">getScriptPath</span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br>}
+</pre>
+    </div>
+
+    <div lang="zh_cn" class="section" title="The Yaf_View_Simple class">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a name="yaf.class.view.simple" id="yaf.class.view.simple"></a>The Yaf_View_Simple
+            class</h3>
+          </div>
+        </div>
+      </div><a name="N233E5" class="indexterm" id="N233E5"></a>
+
+      <div class="simplesect" title="简介">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a name="yaf.class.view.simple.intro" id="yaf.class.view.simple.intro"></a>简介</h4>
+            </div>
+          </div>
+        </div>
+
+        <p>Yaf_View_Simple是Yaf自带的视图引擎, 它追求性能, 所以并没有提供类似Smarty那样的多样功能, 和复杂的语法.</p>
+
+        <p>对于Yaf_View_Simple的视图模板, 就是普通的PHP脚本, 对于通过Yaf_View_Interface::assgin的模板变量, 可在视图模板中直接通过变量名使用.</p>
+
+        <p>在PHP5.3之后, 打开<a class="link" href="yaf.ini.html#yaf.install.ini.use_namespace" tppabs="http://www.laruence.com/manual/yaf.ini.html#yaf.install.ini.use_namespace">yaf.use_namespace</a>的情况下,
+        也可以使用 Yaf\View_Simple</p>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>
+        <pre class="classsynopsis">
+ <span class="ooclass">
+    <span class="classname">Yaf_View_Simple</span>
+    extends
+    Yaf_View_Interface
+   </span> {<br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+
+    <span class="type">array </span>
+
+    <a class="link" href="yaf.class.view.html#yaf.class.view.simple.props._tpl_vars" tppabs="http://www.laruence.com/manual/yaf.class.view.html#yaf.class.view.simple.props._tpl_vars">
+     <code class="varname">_tpl_vars</code>
+    </a>
+   ;</code><br><code class="fieldsynopsis">  
+    <span class="modifier">protected </span>
+
+    <span class="type">string </span>
+
+    <a class="link" href="yaf.class.view.html#yaf.class.view.simple.props._script_path" tppabs="http://www.laruence.com/manual/yaf.class.view.html#yaf.class.view.simple.props._script_path">
+     <code class="varname">_script_path</code>
+    </a>
+   ;</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">string </span><span class="methodname">
+     <a class="link" href="yaf.class.view.simple.render.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.render.html" title="Yaf_View_Simple::render">
+      render
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$view_path</span>
+    </span>,<br>                                              <span class="methodparam">
+     <span class="type">array </span>
+     <span class="parameter">$tpl_vars</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.view.simple.display.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.display.html" title="Yaf_View_Simple::display">
+      display
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$view_path</span>
+    </span>,<br>                                                <span class="methodparam">
+     <span class="type">array </span>
+     <span class="parameter">$tpl_vars</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.view.simple.setScriptPath.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.setScriptPath.html" title="Yaf_View_Simple::setScriptPath">
+      setScriptPath
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$view_directory</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">string </span><span class="methodname">
+     <a class="link" href="yaf.class.view.simple.getScriptPath.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.getScriptPath.html" title="Yaf_View_Simple::getScriptPath">
+      getScriptPath
+    </a>
+    </span>(<span class="methodparam">
+     <span class="type">void </span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.view.simple.assign.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.assign.html" title="Yaf_View_Simple::assign">
+      assign
+     </a>
+     </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>,<br>                                                 <span class="methodparam">
+     <span class="type">mixed </span>
+     <span class="parameter">$value</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">boolean </span><span class="methodname">
+     <a class="link" href="yaf.class.view.simple.__set.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.__set.html" title="Yaf_View_Simple::__set">
+      __set
+     </a>
+     </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>,<br>                                                <span class="methodparam">
+     <span class="type">mixed </span>
+     <span class="parameter">$value</span>
+     <span class="initializer">= NULL</span>
+    </span>);</code><br><code class="methodsynopsis">  <span class="modifier">public </span><span class=
+"type">mixed </span><span class="methodname">
+     <a class="link" href="yaf.class.view.simple.__get.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.__get.html" title="Yaf_View_Simple::__get">
+      __get
+     </a>
+     </span>(<span class="methodparam">
+     <span class="type">string </span>
+     <span class="parameter">$name</span>
+    </span>);</code><br>}
+</pre>
+      </div>
+
+      <div class="simplesect">
+        <div class="titlepage"></div>属性说明
+
+        <div class="variablelist">
+          <dl>
+            <dt><a name="yaf.class.view.simple.props._tpl_vars" id="yaf.class.view.simple.props._tpl_vars"></a>
+            <span class="term"><code class="varname">_tpl_vars</code></span></dt>
+
+            <dd>
+              <p>所有通过Yaf_View_Simple::assign分配的变量, 都保存在此属性中</p>
+            </dd>
+          </dl>
+        </div>
+
+        <dl>
+          <dt><a name="yaf.class.view.simple.props._script_path" id="yaf.class.view.simple.props._script_path"></a>
+          <span class="term"><code class="varname">_script_path</code></span></dt>
+
+          <dd>
+            <p>当前视图引擎的模板文件基目录</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="navfooter">
+    <hr>
+
+    <table summary="Navigation footer" width="100%">
+      <tr>
+        <td align="left" width="40%"><a accesskey="p" href="yaf.class.action.html" tppabs="http://www.laruence.com/manual/yaf.class.action.html">上一页</a>&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="u" href="yaf.classes.html" tppabs="http://www.laruence.com/manual/yaf.classes.html">上一级</a></td>
+
+        <td align="right" width="40%">&nbsp;<a accesskey="n" href="yaf.class.view.simple.assign.html" tppabs="http://www.laruence.com/manual/yaf.class.view.simple.assign.html">下一页</a></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="left" width="40%">11.10. The Yaf_Action_Abstract class&nbsp;</td>
+
+        <td align="center" width="20%"><a accesskey="h" href="index.html" tppabs="http://www.laruence.com/manual/index.html">起始页</a></td>
+
+        <td valign="top" align="right" width="40%">&nbsp;Yaf_View_Simple::assign</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script type="text/javascript" src="tongji.js" tppabs="http://js.tongji.linezing.com/728491/tongji.js"></script><noscript><a href="javascript:if(confirm('http://www.linezing.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.linezing.com/'" tppabs="http://www.linezing.com/"><img src="tongji.gif" tppabs="http://img.tongji.linezing.com/728491/tongji.gif"/></a></noscript>
+</html>
